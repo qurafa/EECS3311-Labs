@@ -93,10 +93,11 @@ public class UndirectedGraph<T extends Comparable<T>> extends Graph<T> {
 		
 		String output = "Graph:\n";
 		
-		for(T from : graph.keySet()) {
-			output += "Vertex: " + from + " & Adjacent Vertices: " + graph.get(from).toString() + "\n";
+		for(T v : graph.keySet()) {
+			
+			output += "\n";
 		}
-		System.out.println(output);
+		
         return output; // this line needs to change
 	}
 

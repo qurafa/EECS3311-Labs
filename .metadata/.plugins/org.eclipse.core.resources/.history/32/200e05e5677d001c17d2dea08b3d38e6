@@ -22,9 +22,8 @@ public class UndirectedGraphAlgorithms<T extends Comparable<T>>
 	 */
 	public List<T> findBFSpath(Graph<T> g, T initial, T destination) {
 		// TODO : implement BFS path search
-		List <T> output = new ArrayList<T>();
-		Queue <T> open = new LinkedList<T>();
-		
+		List output = new ArrayList<T>();
+		Queue open = new LinkedList();
 		
 		
 		return output; // this line must change

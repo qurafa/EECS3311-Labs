@@ -83,21 +83,12 @@ public class UndirectedGraph<T extends Comparable<T>> extends Graph<T> {
 		// Hint: Recall, both vertices already exist. Also,
 		//       our graphs are not oriented, hence both edges
 		//       need to be added.
-		graph.get(fromVertex).add(toVertex);
-		graph.get(toVertex).add(fromVertex);
 	}
 
 	@Override
 	public String toString() {
 		// TODO: Override toString() method
-		
-		String output = "Graph:\n";
-		
-		for(T from : graph.keySet()) {
-			output += "Vertex: " + from + " & Adjacent Vertices: " + graph.get(from).toString() + "\n";
-		}
-		System.out.println(output);
-        return output; // this line needs to change
+        return null; // this line needs to change
 	}
 
 
