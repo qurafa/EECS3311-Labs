@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="org.apache.commons.io.IOUtilsTestCase" time="0.238" tests="80" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib"/>
+    <property name="java.vm.version" value="25.311-b11"/>
+    <property name="gopherProxySet" value="false"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/faruq/eclipse2021-workspace/commons-io-2.5"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=":"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.country" value="CA"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/Users/faruq/eclipse2021-workspace/commons-io-2.5"/>
+    <property name="java.runtime.version" value="1.8.0_311-b11"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/endorsed"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.io.tmpdir" value="/var/folders/cn/wwxs8y0s5pz1pnx0rbvryy_c0000gn/T/"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="classworlds.conf" value="/Users/faruq/eclipse2021-workspace/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf11138365447896528702.tmp"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/faruq/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="10.16"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="user.home" value="/Users/faruq"/>
+    <property name="user.timezone" value="America/Toronto"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="faruq"/>
+    <property name="java.class.path" value="/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.m2e.maven.runtime_1.18.1.20211011-2139/jars/plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B test"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="en"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_311"/>
+    <property name="java.ext.dirs" value="/Users/faruq/Library/Java/Extensions:/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java"/>
+    <property name="sun.boot.class.path" value="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/resources.jar:/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/rt.jar:/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/sunrsasign.jar:/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/jsse.jar:/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/jce.jar:/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/charsets.jar:/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/jfr.jar:/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/Users/faruq/eclipse2021-workspace/commons-io-2.5/EMBEDDED"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="sun.cpu.isalist" value=""/>
+  </properties>
+  <testcase name="testToCharArray_Reader" classname="org.apache.commons.io.IOUtilsTestCase" time="0.049"/>
+  <testcase name="testToString_InputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.004"/>
+  <testcase name="testContentEqualsIgnoreEOL" classname="org.apache.commons.io.IOUtilsTestCase" time="0.003"/>
+  <testcase name="testCopyLarge_FullLength" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testCloseQuietly_SelectorNull" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testCopy_String_Writer" classname="org.apache.commons.io.IOUtilsTestCase" time="0.004"/>
+  <testcase name="testToByteArray_InputStream_NegativeSize" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testToString_Reader" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testReadFully_InputStream_Offset" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testCopyLarge_CharExtraLength" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testSkip_ReadableByteChannel" classname="org.apache.commons.io.IOUtilsTestCase" time="0.013"/>
+  <testcase name="testAsBufferedReaderWithBufferSize" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testSkipFully_Reader" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testToString_URL_CharsetNameNull" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testToInputStream_String" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testToByteArray_URI" classname="org.apache.commons.io.IOUtilsTestCase" time="0.004"/>
+  <testcase name="testToByteArray_URL" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testAsBufferedOutputStreamWithBufferSize" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testToString_URL_CharsetName" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testToByteArray_InputStream_SizeLong" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testToByteArray_InputStream_SizeZero" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testCloseQuietly_Socket" classname="org.apache.commons.io.IOUtilsTestCase" time="0.005"/>
+  <testcase name="testToString_ByteArray" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testToString_URI_CharsetNameNull" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testCopy_ByteArray_Writer" classname="org.apache.commons.io.IOUtilsTestCase" time="0.005"/>
+  <testcase name="testCopyLarge_NoSkip" classname="org.apache.commons.io.IOUtilsTestCase" time="0"/>
+  <testcase name="testToInputStream_CharSequence" classname="org.apache.commons.io.IOUtilsTestCase" time="0.003"/>
+  <testcase name="testSkip_InputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testCloseQuietly_SelectorIOException" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testAsBufferedWriterWithBufferSize" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testAsBufferedReader" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testToByteArray_InputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.004"/>
+  <testcase name="testCopyLarge_CharFullLength" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testAsBufferedWriter" classname="org.apache.commons.io.IOUtilsTestCase" time="0.003"/>
+  <testcase name="testToString_URI_CharsetName" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testCloseQuietly_SocketIOException" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testSkipFully_ReadableByteChannel" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testToByteArray_InputStream_Size" classname="org.apache.commons.io.IOUtilsTestCase" time="0.003"/>
+  <testcase name="testCopyLarge_SkipInvalid" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testCopyLarge_CharNoSkip" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testCopy_ByteArray_OutputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.003"/>
+  <testcase name="testSkip_FileReader" classname="org.apache.commons.io.IOUtilsTestCase" time="0.003"/>
+  <testcase name="testConstants" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testReadFully_InputStream__ReturnByteArray" classname="org.apache.commons.io.IOUtilsTestCase" time="0.003"/>
+  <testcase name="testReadLines_Reader" classname="org.apache.commons.io.IOUtilsTestCase" time="0.004"/>
+  <testcase name="testAsBufferedOutputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testAsBufferedNull" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testSkipFully_InputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testCloseQuietly_SelectorTwice" classname="org.apache.commons.io.IOUtilsTestCase" time="0.006"/>
+  <testcase name="testStringToOutputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.005"/>
+  <testcase name="testReadFully_Reader_Offset" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testCloseQuietly_ServerSocketIOException" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testCopyLarge_ExtraLength" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testCopyLarge_Skip" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testRead_ReadableByteChannel" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testToBufferedInputStream_InputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.004"/>
+  <testcase name="testCloseQuietly_Selector" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testCloseQuietly_AllCloseableIOException" classname="org.apache.commons.io.IOUtilsTestCase" time="0.003"/>
+  <testcase name="testContentEquals_Reader_Reader" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testAsBufferedInputStreamWithBufferSize" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testAsBufferedInputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testReadFully_InputStream_ByteArray" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testToByteArray_Reader" classname="org.apache.commons.io.IOUtilsTestCase" time="0.003"/>
+  <testcase name="testToCharArray_InputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.004"/>
+  <testcase name="testReadLines_InputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testToByteArray_String" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testCopyLarge_CharSkip" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testReadFully_ReadableByteChannel" classname="org.apache.commons.io.IOUtilsTestCase" time="0.003"/>
+  <testcase name="testToByteArray_URLConnection" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testToBufferedInputStreamWithBufferSize_InputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.006"/>
+  <testcase name="testToByteArray_InputStream_SizeIllegal" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testToString_URI" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testToString_URL" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testReadLines_InputStream_String" classname="org.apache.commons.io.IOUtilsTestCase" time="0.003"/>
+  <testcase name="testCloseQuietly_ServerSocket" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testCloseQuietly_CloseableIOException" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testContentEquals_InputStream_InputStream" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+  <testcase name="testReadFully_Reader" classname="org.apache.commons.io.IOUtilsTestCase" time="0.002"/>
+  <testcase name="testToCharArray_InputStream_CharsetName" classname="org.apache.commons.io.IOUtilsTestCase" time="0.003"/>
+  <testcase name="testCopyLarge_CharSkipInvalid" classname="org.apache.commons.io.IOUtilsTestCase" time="0.001"/>
+</testsuite>
