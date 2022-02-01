@@ -1,0 +1,212 @@
+package york.eecs.test;
+
+import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+import york.eecs.source.UndirectedGraph;
+import york.eecs.source.UndirectedGraphAlgorithms;
+import york.eecs.source.VertexExistsException;
+
+public class StudentTest {
+
+	 /**
+	  * TODO: Please write at least 5 test cases for testing @UndirectedGraph.
+	  * TODO: Please write at least 5 test cases for testing @UndirectedGraphAlgorithms.
+	  */
+	
+	UndirectedGraphAlgorithms<String> uga;
+	@Before
+	public void setUp() throws Exception {
+		uga = new UndirectedGraphAlgorithms<>();
+	}
+	
+	//UndirectGraph test
+	
+	//testing whether an empty graph returns the right boolean
+	@Test
+	public void graphEmptyTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+		boolean result = ug.isEmpty();
+		boolean expected = false;
+		assertEquals(result, expected);
+	}
+	
+	//testing whether an empty graph returns 0 as it's size
+	@Test
+	public void graphEmptySizeTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+		int result = ug.getSize();
+		int expected = 0;
+		assertEquals(result, expected);
+	}
+	
+	//testing the string an empty graph returns
+	@Test
+	public void graphEmptyStringTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+		String result = ug.toString();
+		String expected = "Graph:\n";
+		assertEquals(result, expected);
+	}
+	
+	//testing the number of vertices that an empty graph returns
+	@Test
+	public void getEmptyVerticesTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+		List<String> result = ug.getVertices();
+		List<String> expected = new ArrayList<>();
+		assertEquals(result, expected);
+	}
+	
+	//testing what is returned if an existing vertex is inserted
+	@Test(expected = VertexExistsException.class)
+	public void graphVertexExistsTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+		try {
+			ug.addVertex("A");
+			ug.addVertex("B");
+			ug.addVertex("C");
+			ug.addEdge("A", "B");
+			ug.addEdge("A", "C");
+		} catch (VertexExistsException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	 
+	//testing what happens if we have no vertices in the graph, but
+	@Test
+	public void graphNoEdgeTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+	}
+	
+	//UndirectedGraphAlgorithms Test
+	
+	//testing what is returned if the graph is empty
+	@Test(expected = NullPointerException.class)
+	public void algorithmEmptyTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+		List<String> result = (ArrayList<String>) uga.findBFSpath(ug, "B", "C");
+	}
+	
+	//testing for if there are no edges between the vertices in the graph
+	@Test
+	public void algorithmNoEdgeTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+		try {
+			ug.addVertex("A");
+			ug.addVertex("B");
+			ug.addVertex("C");
+		}
+		catch(VertexExistsException e)
+		{
+			e.printStackTrace();
+		}
+		List<String> result = (ArrayList<String>) uga.findBFSpath(ug, "B", "C");
+		List<String> expected = new ArrayList<String>();
+		assertEquals(result, expected);
+	}
+	
+	//testing for if the destination edge is disconnected from the starting edge
+	@Test
+	public void algorithmDisconnectedEdgeTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+		try {
+			ug.addVertex("A");
+			ug.addVertex("B");
+			ug.addVertex("C");
+			ug.addEdge("A", "B");
+		}
+		catch(VertexExistsException e)
+		{
+			e.printStackTrace();
+		}
+		List<String> result = (ArrayList<String>) uga.findBFSpath(ug, "B", "C");
+		List<String> expected = new ArrayList<String>();
+		assertEquals(result, expected);
+	}
+	
+	//testing what is returned if the starting node does not exist
+	@Test(expected = NullPointerException.class)
+	public void algorithmStartDoesNotExistTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+		try {
+			ug.addVertex("A");
+			ug.addVertex("B");
+			ug.addVertex("C");
+			ug.addEdge("A", "B");
+		}
+		catch(VertexExistsException e)
+		{
+			e.printStackTrace();
+		}
+		List<String> result = (ArrayList<String>) uga.findBFSpath(ug, "E", "C");
+	}
+	
+	//testing what is returned if the destination node does not exist
+	@Test
+	public void algortihmEndDoesNotExistTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+		try {
+			ug.addVertex("A");
+			ug.addVertex("B");
+			ug.addVertex("C");
+			ug.addEdge("A", "B");
+			ug.addEdge("B", "C");
+		}
+		catch(VertexExistsException e)
+		{
+			e.printStackTrace();
+		}
+		List<String> result = (ArrayList<String>) uga.findBFSpath(ug, "B", "E");
+		List<String> expected = new ArrayList<String>();
+		assertEquals(result, expected);
+	}
+	
+	//testing what we return if the start and end are equal
+	@Test
+	public void algorithmStartEqualEndTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+		try {
+			ug.addVertex("A");
+			ug.addVertex("B");
+			ug.addVertex("C");
+			ug.addEdge("A", "B");
+			ug.addEdge("B", "C");
+		}
+		catch(VertexExistsException e)
+		{
+			e.printStackTrace();
+		}
+		List<String> result = (ArrayList<String>) uga.findBFSpath(ug, "B", "B");
+		List<String> expected = new ArrayList<String>();
+		expected.add("B");
+		assertEquals(result, expected);
+	}
+	
+	//testing what happens when there is only one node in the graph
+	@Test
+	public void algorithmOneNodeInGraphTest()
+	{
+		UndirectedGraph<String> ug = new UndirectedGraph<>();;
+	}
+}

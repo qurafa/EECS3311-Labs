@@ -31,7 +31,7 @@ public class UndirectedGraph<T extends Comparable<T>> extends Graph<T> {
 	public boolean isEmpty() {
 		// TODO: Complete this method
 		// Hint: An empty graph contains zero vertices
-		return graph.isEmpty(); // this line needs to be rewritten 
+		return !graph.isEmpty(); // this line needs to be rewritten 
 	}
 
 	/**
@@ -96,7 +96,7 @@ public class UndirectedGraph<T extends Comparable<T>> extends Graph<T> {
 		for(T from : graph.keySet()) {
 			output += "Vertex: " + from + " & Adjacent Vertices: " + graph.get(from).toString() + "\n";
 		}
-		System.out.println(output);
+		
         return output; // this line needs to change
 	}
 

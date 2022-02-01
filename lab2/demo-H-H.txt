@@ -1,0 +1,185 @@
+Loaded board from boards\Starter.txt.
+Welcome!
+
+0: Human vs Human
+1: Human vs Computer (Random)
+Choose a game mode to play i.e. enter a number: 0
+Playing Human vs Human
+
+  | A B C D E
+--+----------
+1 | O O O O X
+2 | O O O O O
+3 | O O X O O
+4 | O O O O O
+5 | X O O O O
+
+[MUSKETEER] Enter 'M' to move, 'U' to undo, and 'S' to save: M
+[MUSKETEER] Possible pieces are [E1, C3, A5]. Enter the piece you want to move: E1
+[MUSKETEER] Possible destinations are [E2, D1]. Enter where you want to move: E2
+
+  | A B C D E
+--+----------
+1 | O O O O
+2 | O O O O X
+3 | O O X O O
+4 | O O O O O
+5 | X O O O O
+
+[GUARD] Enter 'M' to move, 'U' to undo, and 'S' to save: U
+Undid the previous move.
+
+  | A B C D E
+--+----------
+1 | O O O O X
+2 | O O O O O
+3 | O O X O O
+4 | O O O O O
+5 | X O O O O
+
+[MUSKETEER] Enter 'M' to move, 'U' to undo, and 'S' to save: S
+Saved board to boards/2022.02.01.00.15.27.txt.
+
+  | A B C D E
+--+----------
+1 | O O O O X
+2 | O O O O O
+3 | O O X O O
+4 | O O O O O
+5 | X O O O O
+
+[MUSKETEER] Enter 'M' to move, 'U' to undo, and 'S' to save: M
+[MUSKETEER] Possible pieces are [E1, C3, A5]. Enter the piece you want to move: C3
+[MUSKETEER] Possible destinations are [C2, D3, C4, B3]. Enter where you want to move: C2
+
+  | A B C D E
+--+----------
+1 | O O O O X
+2 | O O X O O
+3 | O O   O O
+4 | O O O O O
+5 | X O O O O
+
+[GUARD] Enter 'M' to move, 'U' to undo, and 'S' to save: M
+[GUARD] Possible pieces are [B3, D3, C4]. Enter the piece you want to move: B3
+[GUARD] Possible destinations are [C3]. Enter where you want to move: C3
+
+  | A B C D E
+--+----------
+1 | O O O O X
+2 | O O X O O
+3 | O   O O O
+4 | O O O O O
+5 | X O O O O
+
+[MUSKETEER] Enter 'M' to move, 'U' to undo, and 'S' to save: M
+[MUSKETEER] Possible pieces are [E1, C2, A5]. Enter the piece you want to move: A5
+[MUSKETEER] Possible destinations are [A4, B5]. Enter where you want to move: B5
+
+  | A B C D E
+--+----------
+1 | O O O O X
+2 | O O X O O
+3 | O   O O O
+4 | O O O O O
+5 |   X O O O
+
+[GUARD] Enter 'M' to move, 'U' to undo, and 'S' to save: M
+[GUARD] Possible pieces are [B2, A3, C3, A4, B4]. Enter the piece you want to move: B2
+[GUARD] Possible destinations are [B3]. Enter where you want to move: B3
+
+  | A B C D E
+--+----------
+1 | O O O O X
+2 | O   X O O
+3 | O O O O O
+4 | O O O O O
+5 |   X O O O
+
+[MUSKETEER] Enter 'M' to move, 'U' to undo, and 'S' to save: M
+[MUSKETEER] Possible pieces are [E1, C2, B5]. Enter the piece you want to move: E1
+[MUSKETEER] Possible destinations are [E2, D1]. Enter where you want to move: D2
+D2 is an invalid destination.
+[MUSKETEER] Possible destinations are [E2, D1]. Enter where you want to move: D1
+
+  | A B C D E
+--+----------
+1 | O O O X
+2 | O   X O O
+3 | O O O O O
+4 | O O O O O
+5 |   X O O O
+
+[GUARD] Enter 'M' to move, 'U' to undo, and 'S' to save: M
+[GUARD] Possible pieces are [B1, A2, E2, B3, A4]. Enter the piece you want to move: B1
+[GUARD] Possible destinations are [B2]. Enter where you want to move: B2
+
+  | A B C D E
+--+----------
+1 | O   O X
+2 | O O X O O
+3 | O O O O O
+4 | O O O O O
+5 |   X O O O
+
+[MUSKETEER] Enter 'M' to move, 'U' to undo, and 'S' to save: M
+[MUSKETEER] Possible pieces are [D1, C2, B5]. Enter the piece you want to move: D1
+[MUSKETEER] Possible destinations are [D2, C1]. Enter where you want to move: C1
+
+  | A B C D E
+--+----------
+1 | O   X
+2 | O O X O O
+3 | O O O O O
+4 | O O O O O
+5 |   X O O O
+
+[GUARD] Enter 'M' to move, 'U' to undo, and 'S' to save: M
+[GUARD] Possible pieces are [A1, B2, D2, E2, A4]. Enter the piece you want to move: A1
+[GUARD] Possible destinations are [B1]. Enter where you want to move: B1
+
+  | A B C D E
+--+----------
+1 |   O X
+2 | O O X O O
+3 | O O O O O
+4 | O O O O O
+5 |   X O O O
+
+[MUSKETEER] Enter 'M' to move, 'U' to undo, and 'S' to save: M
+[MUSKETEER] Possible pieces are [C1, C2, B5]. Enter the piece you want to move: B5
+[MUSKETEER] Possible destinations are [B4, C5]. Enter where you want to move: B4
+
+  | A B C D E
+--+----------
+1 |   O X
+2 | O O X O O
+3 | O O O O O
+4 | O X O O O
+5 |     O O O
+
+[GUARD] Enter 'M' to move, 'U' to undo, and 'S' to save: M
+[GUARD] Possible pieces are [B1, A2, D2, E2, A4, C5]. Enter the piece you want to move: B1
+[GUARD] Possible destinations are [A1]. Enter where you want to move: A1
+
+  | A B C D E
+--+----------
+1 | O   X
+2 | O O X O O
+3 | O O O O O
+4 | O X O O O
+5 |     O O O
+
+[MUSKETEER] Enter 'M' to move, 'U' to undo, and 'S' to save: M
+[MUSKETEER] Possible pieces are [C2, B4]. Enter the piece you want to move: B4
+[MUSKETEER] Possible destinations are [B3, C4, A4]. Enter where you want to move: C4
+  | A B C D E
+--+----------
+1 | O   X
+2 | O O X O O
+3 | O O O O O
+4 | O   X O O
+5 |     O O O
+
+
+GUARD won!
