@@ -12,7 +12,8 @@ public class Guard extends Piece {
      * @return True, if Guard can move onto given cell, false otherwise
      */
     @Override
-    public boolean canMoveOnto(Cell cell) { // TODO
-        return true;
+    public boolean canMoveOnto(Cell cell) { 
+    	// TODO
+    	return cell.getPiece() == null ? true : false;
     }
 }

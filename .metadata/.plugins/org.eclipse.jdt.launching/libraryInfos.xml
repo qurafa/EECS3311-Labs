@@ -28,6 +28,7 @@
     </libraryInfo>
     <libraryInfo home="/Users/faruq/Library/Java/JavaVirtualMachines/corretto-11.0.13/Contents/Home" version="11.0.13"/>
     <libraryInfo home="/Library/Java/JavaVirtualMachines/jdk-14.0.2.jdk/Contents/Home" version="14.0.2"/>
+    <libraryInfo home="/Library/Java/JavaVirtualMachines/jdk-16.0.2.jdk/Contents/Home" version="16.0.2"/>
     <libraryInfo home="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home" version="1.8.0_321">
         <bootpath>
             <entry path="/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/lib/resources.jar"/>

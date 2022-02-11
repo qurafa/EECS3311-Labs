@@ -7,6 +7,7 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/faruq/EECS3311 Labs/lab2/eecs3311-lab2"/>
 			<item value="/Users/faruq/EECS3311 Labs/EECS3311-Lab1"/>
 			<item value="/Users/faruq/EECS3311 Labs/commons-io-2.5"/>
 			<item value="/Users/faruq/Documents/York University/Courses/2021-2022/Winter 2021-2022/EECS3311/EECS3311-Lab1/eecs3311-lab1"/>

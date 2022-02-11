@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
@@ -63,8 +64,9 @@ public class Board {
      * @param coordinate Coordinate to find the cell
      * @return Cell that is located at the given coordinate
      */
-    public Cell getCell(Coordinate coordinate) { // TODO
-        return null;
+    public Cell getCell(Coordinate coordinate) {
+    	// TODO
+        return board[coordinate.row][coordinate.col];
     }
 
     /**
@@ -78,23 +80,50 @@ public class Board {
      * Gets all the Musketeer cells on the board.
      * @return List of cells
      */
-    public List<Cell> getMusketeerCells() { // TODO
-        return List.of();
+    public List<Cell> getMusketeerCells() {
+    	// TODO
+    	List<Cell> output = new ArrayList<Cell>();
+    	//going through all the rows and columns
+    	for(int r = 0; r < size; r++) {
+    		for(int c = 0; c < size; c++) {
+    			if(board[r][c].getPiece().getType() == Piece.Type.GUARD) {
+    				output.add(board[c][r]);
+    			}
+    		}
+    	}
+        return output;
     }
 
     /**
      * Gets all the Guard cells on the board.
      * @return List of cells
      */
-    public List<Cell> getGuardCells() { // TODO
-        return List.of();
+    public List<Cell> getGuardCells() {
+    	// TODO
+    	List<Cell> output = new ArrayList<Cell>();
+    	for(int r = 0; r < size; r++) {
+    		for(int c = 0; c < size; c++) {
+    			if(board[r][c].getPiece().getType() == Piece.Type.MUSKETEER) {
+    				output.add(board[c][r]);
+    			}
+    		}
+    	}
+        return output;
     }
 
     /**
      * Executes the given move on the board and changes turns at the end of the method.
      * @param move a valid move
      */
-    public void move(Move move) { // TODO
+    public void move(Move move) {
+    	// TODO
+    	Cell from = board[move.fromCell.getCoordinate().row][move.fromCell.getCoordinate().col];
+    	Cell to = board[move.toCell.getCoordinate().row][move.toCell.getCoordinate().col];
+    	from.setPiece(null);
+    	to.setPiece((turn == Piece.Type.MUSKETEER) ? new Musketeer() : new Guard());
+    	
+    	//changing the turn after moving the piece
+    	turn = (turn == Piece.Type.MUSKETEER) ? Piece.Type.GUARD : Piece.Type.MUSKETEER;
     }
 
     /**
@@ -102,8 +131,15 @@ public class Board {
      * @param move Copy of a move that was done and needs to be undone. The move copy has the correct piece info in the
      *             from and to cell fields. Changes turns at the end of the method.
      */
-    public void undoMove(Move move) { // TODO
-
+    public void undoMove(Move move) {
+    	// TODO
+    	Cell from = board[move.toCell.getCoordinate().row][move.toCell.getCoordinate().col];
+    	Cell to = board[move.fromCell.getCoordinate().row][move.fromCell.getCoordinate().col];
+    	from.setPiece((turn == Piece.Type.MUSKETEER) ? new Guard() : null);
+    	to.setPiece((turn == Piece.Type.MUSKETEER) ? new Musketeer() : new Guard());
+    	
+    	//changing the turn after moving the piece
+    	turn = (turn == Piece.Type.MUSKETEER) ? Piece.Type.GUARD : Piece.Type.MUSKETEER;
     }
 
     /**
@@ -113,16 +149,41 @@ public class Board {
      * @param move a move
      * @return     True, if the move is valid, false otherwise
      */
-    public Boolean isValidMove(Move move) { // TODO
-        return true;
+    public Boolean isValidMove(Move move) {
+    	// TODO
+    	int rowDifference = Math.abs(move.fromCell.getCoordinate().row - move.toCell.getCoordinate().row);
+    	int colDifference = Math.abs(move.fromCell.getCoordinate().col - move.toCell.getCoordinate().col);
+    	
+    	Piece.Type fromType = move.fromCell.getPiece().getType();
+    	Piece.Type toType = move.toCell.getPiece().getType();
+    	
+    	if((rowDifference == 0 && colDifference == 1) || (rowDifference == 1 && colDifference == 0)) {
+    		
+    		if(fromType == Piece.Type.MUSKETEER && toType == Piece.Type.GUARD)
+    			return true;
+    		if(fromType == Piece.Type.GUARD && toType == null)
+    			return true;
+    	}
+    	
+        return false;
     }
 
     /**
      * Get all the possible cells that have pieces that can be moved this turn.
      * @return      Cells that can be moved from the given cells
      */
-    public List<Cell> getPossibleCells() { // TODO
-        return List.of();
+    public List<Cell> getPossibleCells() {
+    	// TODO
+    	List<Cell> output = new ArrayList<Cell>(); 
+    	
+    	//going through all the cells
+    	for (int r = 0; r < size; r++) {
+    		for (int c = 0; c < size; c++) {
+    			if(getPossibleDestinations(board[r][c]).size() > 0) output.add(board[r][c]);
+    		}
+    	}
+    	
+        return output;
     }
 
     /**
@@ -130,23 +191,68 @@ public class Board {
      * @param fromCell The cell that has the piece that is going to be moved
      * @return List of cells that are possible to get to
      */
-    public List<Cell> getPossibleDestinations(Cell fromCell) { // TODO
-        return null;
+    public List<Cell> getPossibleDestinations(Cell fromCell) {
+    	// TODO
+    	List<Cell> output = new ArrayList<Cell>(); 
+    	
+    	if(fromCell.getPiece().getType() == Piece.Type.MUSKETEER) {
+    		Coordinate c = fromCell.getCoordinate();
+    		if(board[c.row-1][c.col].getPiece().getType() == Piece.Type.MUSKETEER)output.add(board[c.row-1][c.col]);
+    		if(board[c.row+1][c.col].getPiece().getType() == Piece.Type.MUSKETEER)output.add(board[c.row+1][c.col]);
+    		if(board[c.row][c.col-1].getPiece().getType() == Piece.Type.MUSKETEER)output.add(board[c.row][c.col-1]);
+    		if(board[c.row][c.col+1].getPiece().getType() == Piece.Type.MUSKETEER)output.add(board[c.row][c.col+1]);
+    	}
+    	else {
+    		Coordinate c = fromCell.getCoordinate();
+    		if(board[c.row-1][c.col].getPiece() == null)output.add(board[c.row-1][c.col]);
+    		if(board[c.row+1][c.col].getPiece() == null)output.add(board[c.row+1][c.col]);
+    		if(board[c.row][c.col-1].getPiece() == null)output.add(board[c.row][c.col-1]);
+    		if(board[c.row][c.col+1].getPiece() == null)output.add(board[c.row][c.col+1]);
+    	}
+    	
+        return output;
     }
 
     /**
      * Get all the possible moves that can be made this turn.
      * @return List of moves that can be made this turn
      */
-    public List<Move> getPossibleMoves() { // TODO
-        return List.of();
+    public List<Move> getPossibleMoves() {
+    	// TODO
+    	List<Move> output = new ArrayList<Move>(); 
+    	
+    	for (int r = 0; r < size; r++) {
+    		for (int c = 0; c < size; c++) {
+    			if(getPossibleDestinations(board[r][c]).size() > 0) {
+    				for(Cell m : getPossibleDestinations(board[r][c])) {
+    					output.add(new Move(board[r][c], m));
+    				}
+    			}
+    		}
+    	}
+    	
+        return output;
     }
 
     /**
      * Checks if the game is over and sets the winner if there is one.
      * @return True, if the game is over, false otherwise.
      */
-    public boolean isGameOver() { // TODO
+    public boolean isGameOver() {
+    	// TODO
+    	
+    	//Checking if there any possible moves
+    	if(getPossibleMoves().size() == 0) {
+    		boolean sameRow = getMusketeerCells().get(0).getCoordinate().row == getMusketeerCells().get(1).getCoordinate().row &&
+    				getMusketeerCells().get(1).getCoordinate().row == getMusketeerCells().get(2).getCoordinate().row;
+    		boolean sameCol = getMusketeerCells().get(0).getCoordinate().col == getMusketeerCells().get(1).getCoordinate().col &&
+    				getMusketeerCells().get(1).getCoordinate().col == getMusketeerCells().get(2).getCoordinate().col;
+    		
+    		winner = (sameRow || sameCol) ? Piece.Type.MUSKETEER : Piece.Type.GUARD;
+    		
+    		return true;
+    	}
+    	
         return false;
     }
 
