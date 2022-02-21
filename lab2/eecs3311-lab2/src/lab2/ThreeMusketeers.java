@@ -143,6 +143,7 @@ public class ThreeMusketeers {
      */
     private void undoMove() {
     	// TODO
+    	//Executed twice if we are playing against random
     	Move undo = moves.remove(moves.size()-1);
     	board.undoMove(undo);
     }

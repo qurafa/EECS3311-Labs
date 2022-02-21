@@ -13,6 +13,6 @@ public class Musketeer extends Piece {
      */
     @Override
     public boolean canMoveOnto(Cell cell) { // TODO
-        return cell.getPiece().getType() == Piece.Type.GUARD ? true : false;
+        return (cell.getPiece() == null) ? false : (cell.getPiece().getType() == Piece.Type.GUARD) ? true : false;
     }
 }

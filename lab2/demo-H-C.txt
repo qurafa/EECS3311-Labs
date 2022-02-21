@@ -28,7 +28,7 @@ Enter 'M' to be a Musketeer or 'G' to be a Guard: M
 5 | X O O O O
 
 [RandomAgent] Calculating move...
-[GUARD (Random Agent)] Moving piece E2 to E1.
+[GUARD (Random Agent)] Moving piece E2 to E1. 
 
   | A B C D E
 --+----------

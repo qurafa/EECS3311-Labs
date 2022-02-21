@@ -86,9 +86,9 @@ public class Board {
     	//going through all the rows and columns
     	for(int r = 0; r < size; r++) {
     		for(int c = 0; c < size; c++) {
-    			if(board[r][c].getPiece().getType() == Piece.Type.GUARD) {
-    				output.add(board[c][r]);
-    			}
+    			if(board[r][c].getPiece() != null && 
+    					board[r][c].getPiece().getType() == Piece.Type.MUSKETEER) 
+    			{output.add(board[r][c]);}
     		}
     	}
         return output;
@@ -103,9 +103,9 @@ public class Board {
     	List<Cell> output = new ArrayList<Cell>();
     	for(int r = 0; r < size; r++) {
     		for(int c = 0; c < size; c++) {
-    			if(board[r][c].getPiece().getType() == Piece.Type.MUSKETEER) {
-    				output.add(board[c][r]);
-    			}
+    			if(board[r][c].getPiece() != null && 
+    					board[r][c].getPiece().getType() == Piece.Type.GUARD) 
+    			{output.add(board[r][c]);}
     		}
     	}
         return output;
@@ -133,10 +133,8 @@ public class Board {
      */
     public void undoMove(Move move) {
     	// TODO
-    	Cell from = board[move.toCell.getCoordinate().row][move.toCell.getCoordinate().col];
-    	Cell to = board[move.fromCell.getCoordinate().row][move.fromCell.getCoordinate().col];
-    	from.setPiece((turn == Piece.Type.MUSKETEER) ? new Guard() : null);
-    	to.setPiece((turn == Piece.Type.MUSKETEER) ? new Musketeer() : new Guard());
+    	board[move.toCell.getCoordinate().row][move.toCell.getCoordinate().col] = move.toCell;
+    	board[move.fromCell.getCoordinate().row][move.fromCell.getCoordinate().col] = move.fromCell;
     	
     	//changing the turn after moving the piece
     	turn = (turn == Piece.Type.MUSKETEER) ? Piece.Type.GUARD : Piece.Type.MUSKETEER;
@@ -154,14 +152,14 @@ public class Board {
     	int rowDifference = Math.abs(move.fromCell.getCoordinate().row - move.toCell.getCoordinate().row);
     	int colDifference = Math.abs(move.fromCell.getCoordinate().col - move.toCell.getCoordinate().col);
     	
-    	Piece.Type fromType = move.fromCell.getPiece().getType();
-    	Piece.Type toType = move.toCell.getPiece().getType();
+    	Piece fromType = move.fromCell.getPiece();
+    	Piece toType = move.toCell.getPiece();
     	
     	if((rowDifference == 0 && colDifference == 1) || (rowDifference == 1 && colDifference == 0)) {
     		
-    		if(fromType == Piece.Type.MUSKETEER && toType == Piece.Type.GUARD)
+    		if(fromType.getType() == Piece.Type.MUSKETEER && toType.getType() == Piece.Type.GUARD)
     			return true;
-    		if(fromType == Piece.Type.GUARD && toType == null)
+    		if(fromType.getType() == Piece.Type.GUARD && toType == null)
     			return true;
     	}
     	
@@ -176,11 +174,12 @@ public class Board {
     	// TODO
     	List<Cell> output = new ArrayList<Cell>(); 
     	
-    	//going through all the cells
-    	for (int r = 0; r < size; r++) {
-    		for (int c = 0; c < size; c++) {
-    			if(getPossibleDestinations(board[r][c]).size() > 0) output.add(board[r][c]);
-    		}
+    	//going through all the cells for this turn
+    	List<Cell> cells = (turn.name() == Piece.Type.MUSKETEER.name()) ? 
+    			getMusketeerCells() : getGuardCells();
+    	
+    	for(int i = 0; i < cells.size(); i++) {
+    		if(getPossibleDestinations(cells.get(i)).size() > 0) output.add(cells.get(i));
     	}
     	
         return output;
@@ -194,20 +193,33 @@ public class Board {
     public List<Cell> getPossibleDestinations(Cell fromCell) {
     	// TODO
     	List<Cell> output = new ArrayList<Cell>(); 
+    	Coordinate c = fromCell.getCoordinate();
     	
-    	if(fromCell.getPiece().getType() == Piece.Type.MUSKETEER) {
-    		Coordinate c = fromCell.getCoordinate();
-    		if(board[c.row-1][c.col].getPiece().getType() == Piece.Type.MUSKETEER)output.add(board[c.row-1][c.col]);
-    		if(board[c.row+1][c.col].getPiece().getType() == Piece.Type.MUSKETEER)output.add(board[c.row+1][c.col]);
-    		if(board[c.row][c.col-1].getPiece().getType() == Piece.Type.MUSKETEER)output.add(board[c.row][c.col-1]);
-    		if(board[c.row][c.col+1].getPiece().getType() == Piece.Type.MUSKETEER)output.add(board[c.row][c.col+1]);
-    	}
-    	else {
-    		Coordinate c = fromCell.getCoordinate();
-    		if(board[c.row-1][c.col].getPiece() == null)output.add(board[c.row-1][c.col]);
-    		if(board[c.row+1][c.col].getPiece() == null)output.add(board[c.row+1][c.col]);
-    		if(board[c.row][c.col-1].getPiece() == null)output.add(board[c.row][c.col-1]);
-    		if(board[c.row][c.col+1].getPiece() == null)output.add(board[c.row][c.col+1]);
+    	if(fromCell.getPiece() != null) {
+    		if(fromCell.getPiece().getType() == Piece.Type.MUSKETEER) {
+        		if(c.row > 0 && 
+        				board[c.row-1][c.col].getPiece() != null &&
+        				board[c.row-1][c.col].getPiece().getType() == Piece.Type.GUARD) 
+        		{output.add(board[c.row-1][c.col]);}
+        		if(c.row < 4 && 
+        				board[c.row+1][c.col].getPiece() != null &&
+        				board[c.row+1][c.col].getPiece().getType() == Piece.Type.GUARD) 
+        		{output.add(board[c.row+1][c.col]);}
+        		if(c.col > 0 && 
+        				board[c.row][c.col-1].getPiece() != null &&
+        				board[c.row][c.col-1].getPiece().getType() == Piece.Type.GUARD) 
+        		{output.add(board[c.row][c.col-1]);}
+        		if(c.col < 4 && 
+        				board[c.row][c.col+1].getPiece() != null &&
+        				board[c.row][c.col+1].getPiece().getType() == Piece.Type.GUARD) 
+        		{output.add(board[c.row][c.col+1]);}
+        	}
+        	else if(fromCell.getPiece().getType() == Piece.Type.GUARD) {
+        		if(c.row > 0 && board[c.row-1][c.col].getPiece() == null) {output.add(board[c.row-1][c.col]);}
+        		if(c.row < 4 && board[c.row+1][c.col].getPiece() == null) {output.add(board[c.row+1][c.col]);}
+        		if(c.col > 0 && board[c.row][c.col-1].getPiece() == null) {output.add(board[c.row][c.col-1]);}
+        		if(c.col < 4 && board[c.row][c.col+1].getPiece() == null) {output.add(board[c.row][c.col+1]);}
+        	}
     	}
     	
         return output;
@@ -221,13 +233,13 @@ public class Board {
     	// TODO
     	List<Move> output = new ArrayList<Move>(); 
     	
-    	for (int r = 0; r < size; r++) {
-    		for (int c = 0; c < size; c++) {
-    			if(getPossibleDestinations(board[r][c]).size() > 0) {
-    				for(Cell m : getPossibleDestinations(board[r][c])) {
-    					output.add(new Move(board[r][c], m));
-    				}
-    			}
+    	//going through all the cells for this turn
+    	List<Cell> cells = (turn == Piece.Type.MUSKETEER) ? 
+    			getMusketeerCells() : getGuardCells();
+    	
+    	for(int i = 0; i < cells.size(); i++) {
+    		for (int j = 0; j < getPossibleDestinations(cells.get(i)).size(); j++) {
+    			output.add(new Move(cells.get(i), getPossibleDestinations(cells.get(i)).get(j)));
     		}
     	}
     	
@@ -242,16 +254,22 @@ public class Board {
     	// TODO
     	
     	//Checking if there any possible moves
-    	if(getPossibleMoves().size() == 0) {
     		boolean sameRow = getMusketeerCells().get(0).getCoordinate().row == getMusketeerCells().get(1).getCoordinate().row &&
     				getMusketeerCells().get(1).getCoordinate().row == getMusketeerCells().get(2).getCoordinate().row;
+    		
     		boolean sameCol = getMusketeerCells().get(0).getCoordinate().col == getMusketeerCells().get(1).getCoordinate().col &&
     				getMusketeerCells().get(1).getCoordinate().col == getMusketeerCells().get(2).getCoordinate().col;
     		
-    		winner = (sameRow || sameCol) ? Piece.Type.MUSKETEER : Piece.Type.GUARD;
+    		if(sameRow || sameCol) {
+    			winner = Piece.Type.GUARD;
+	    		return true;
+    		}
     		
-    		return true;
-    	}
+    		if(turn == Piece.Type.MUSKETEER && getPossibleMoves().size() == 0) {
+    			winner = Piece.Type.MUSKETEER;
+    			return true;
+    		}
+    	
     	
         return false;
     }
