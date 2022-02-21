@@ -253,7 +253,6 @@ public class Board {
     public boolean isGameOver() {
     	// TODO
     	
-    	//Checking if there any possible moves
     		boolean sameRow = getMusketeerCells().get(0).getCoordinate().row == getMusketeerCells().get(1).getCoordinate().row &&
     				getMusketeerCells().get(1).getCoordinate().row == getMusketeerCells().get(2).getCoordinate().row;
     		
@@ -269,7 +268,6 @@ public class Board {
     			winner = Piece.Type.MUSKETEER;
     			return true;
     		}
-    	
     	
         return false;
     }
