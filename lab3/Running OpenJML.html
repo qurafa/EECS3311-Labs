@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0095)https://web.archive.org/web/20190222133053/http://www.openjml.org/documentation/execution.shtml -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./Running OpenJML_files/analytics.js.download" type="text/javascript"></script>
+<script type="text/javascript">window.addEventListener('DOMContentLoaded',function(){var v=archive_analytics.values;v.service='wb';v.server_name='wwwb-app226.us.archive.org';v.server_ms=315;archive_analytics.send_pageview({});});</script>
+<script type="text/javascript" src="./Running OpenJML_files/bundle-playback.js.download" charset="utf-8"></script>
+<script type="text/javascript" src="./Running OpenJML_files/wombat.js.download" charset="utf-8"></script>
+<script type="text/javascript">
+  __wm.init("https://web.archive.org/web");
+  __wm.wombat("http://www.openjml.org:80/documentation/execution.shtml","20190222133053","https://web.archive.org/","web","/_static/",
+	      "1550842253");
+</script>
+<link rel="stylesheet" type="text/css" href="./Running OpenJML_files/banner-styles.css">
+<link rel="stylesheet" type="text/css" href="./Running OpenJML_files/iconochive.css">
+<!-- End Wayback Rewrite JS Include -->
+
+    <link href="./Running OpenJML_files/openjml.css" rel="STYLESHEET" type="text/css">
+    <meta name="description" content="OpenJML, formal methods tool for Java and the Java Modeling Language (JML)">
+    <link rel="SHORTCUT ICON" href="https://web.archive.org/web/20190222133053im_/http://www.openjml.org/documentation/favicon.ico">
+
+    <!-- customize the page title -->
+    <title>Running OpenJML</title>
+    <!-- end customized page title -->
+    </head>
+
+<body><!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  /*min-width:800px !important;*/
+}
+</style>
+<script>__wm.rw(0);</script>
+<div id="wm-ipp-base" lang="en" style="display: block; direction: ltr;">
+</div><div id="wm-ipp-print">The Wayback Machine - https://web.archive.org/web/20190222133053/http://www.openjml.org:80/documentation/execution.shtml</div>
+<div id="donato" style="position:relative;width:100%;">
+  <div id="donato-base">
+    <iframe id="donato-if" src="./Running OpenJML_files/donate.html" scrolling="no" frameborder="0" style="width:100%; height:100%">
+    </iframe>
+  </div>
+</div><script type="text/javascript">
+__wm.bt(650,27,25,2,"web","http://www.openjml.org/documentation/execution.shtml","20190222133053",1996,"/_static/",["/_static/css/banner-styles.css?v=omkqRugM","/_static/css/iconochive.css?v=qtvMKcIJ"], "False");
+  __wm.rw(1);
+</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+  
+
+  
+<div id="rest">  
+
+<img class="center" src="./Running OpenJML_files/jml-logo-small64.png" alt="JML Logo">
+
+<div id="banner">
+ <h1><a name="top">OpenJML
+     (<span style="color:#006000">J</span><span style="color:#a00000">M</span><span style="color:#000090">L</span>)
+      </a>
+    </h1>
+</div>
+
+
+<div id="content">
+
+
+<h2 align="center">Running OpenJML (Command-line version)</h2>
+<p>
+OpenJML is a tool for working with logical annotations in Java programs. It
+enables static or run-time checking of the validity of the annotations.
+</p>
+<a name="Execution">
+
+<p>
+To execute OpenJML (command-line version), you need
+</p>
+<ul>
+<li>An appropriate Java VM: Java 8</li>
+<li>A copy of the OpenJML release. The release
+contains the openjml.jar, jmlspecs.jar, and jmlruntime.jar files.
+The release may be installed anywhere you like. 
+In the examples below, the (absolute path or path relative to the current working directory to the) 
+installation directory is indicated by <i>$OJ</i></li>
+</ul>
+
+
+<p>
+There are a few important topics for the user to know; these are discussed at the indicated links:
+</p>
+</a><ul><a name="Execution">
+</a><li><a name="Execution"></a><a href="https://web.archive.org/web/20190222133053/http://www.openjml.org/documentation/paths.shtml">How source files, class files, and specification files are specified by the user and found by OpenJML</a></li>
+<li><a href="https://web.archive.org/web/20190222133053/http://www.openjml.org/documentation/commandline.shtml">Command-line options</a></li>
+<li><a href="https://web.archive.org/web/20190222133053/http://www.openjml.org/documentation/checks.shtml">The set of checks the tools perform</a></li>
+</ul>
+
+<h3>Type-checking</h3>
+
+<p>
+The OpenJML tool operates like a Java compiler, on a set of files.  For example, the command
+</p>
+<div style="background-color:lightblue">
+ <pre>
+java -jar <i>$OJ</i>/openjml.jar A.java
+
+</pre> 
+</div>
+<p>
+will type-check the Java and JML in the A.java file and any classes on which A.java depends.
+Include the full absolute or relative path to the openjml.jar file as needed.
+</p><p>
+For example, put the following text in a file named <code>A.java</code> and execute the command above. 
+</p>
+<div style="background-color:lightblue">
+ <pre>public class A {
+
+  //@ ensures \result == true;
+  public void m() {}
+
+}
+</pre> 
+</div>
+<p>
+The following output is obtained:
+</p>
+<div style="background-color:lightblue">
+<pre>A.java:3: A \result expression may not be used in the specification of a method that returns void
+  //@ ensures \result == true;
+               ^
+1 error
+</pre>
+</div>
+
+
+<h3>Static checking</h3>
+<p>
+To run the static checker, use a command-line like the following.
+</p>
+<div style="background-color:lightblue">
+<pre>
+java -jar <i>$OJ</i>/openjml.jar -esc B.java
+
+</pre>
+</div>
+<p>
+For example, place the following text in the file <code>B.java</code> and execute the command above.
+</p>
+<div style="background-color:lightblue">
+ <pre>public class B {
+
+  static /*@ spec_public*/ int j,k;
+
+  //@ requires i &gt;= 0;
+  //@ modifies j;
+  //@ ensures j == i;
+  public static void setj(int i) {
+    k = i;
+    return;
+  }
+
+  //@ ensures j == 1;
+  public static void main(String[] args) {
+    setj(3);
+    return;
+  }
+
+}
+</pre> 
+</div>
+
+
+<p>
+The following output is produced; the various pairs of warnings can be output in any order:
+</p>
+<div style="background-color:lightblue">
+ <pre>B.java:16: warning: The prover cannot establish an assertion (Postcondition: B.java:13: ) in method main
+    return;
+    ^
+B.java:13: warning: Associated declaration: B.java:16: 
+  //@ ensures j == 1;
+      ^
+B.java:10: warning: The prover cannot establish an assertion (Postcondition: B.java:7: ) in method setj
+    return;
+    ^
+B.java:7: warning: Associated declaration: B.java:10: 
+  //@ ensures j == i;
+      ^
+B.java:9: warning: The prover cannot establish an assertion (Assignable: B.java:6: ) in method setj:  k
+    k = i;
+      ^
+B.java:6: warning: Associated declaration: B.java:9: 
+  //@ modifies j;
+      ^
+6 warnings
+</pre> 
+</div>
+<ul>
+<li>The message about line 9 says that variable k is being assigned, but is not
+indicated in the specification (on line 6) as being permitted to be modified.
+</li>
+<li>The message about line 10 says thet at this exit from the method, 
+a postcondition (on line 7) is not true. Changing the assignment statement to 
+<code>j = i</code> will fix this and the previous warning.
+</li>
+<li>The message about line 13 says that the postcondition on line 10 is not true on exit from the method. This can be fixed by changing the expression in the
+ensures clause to <code>j == 3</code>.
+</li>
+</ul>
+
+<h3>Runtime assertion checking</h3>
+<p>
+To compile the JML specifications in the given files and in any files that they reference as assertions to be checked at runtime, use the -rac option:
+</p>
+<div style="background-color:lightblue">
+<pre>
+java -jar <i>$OJ</i>/openjml.jar -rac B.java
+
+</pre>
+</div>
+
+<p>
+Then execute this command (the jmlruntime.jar is part of the OpenJML installation -- include the full path to that library as needed).
+(Use a colon instead of a semicolon in the classpath on Linux and MacOS systems.)
+</p>
+<div style="background-color:lightblue">
+<pre>
+java -classpath ".;<i>$OJ</i>/jmlruntime.jar" B
+
+</pre>
+</div>
+
+<p>
+The following output is produced:
+</p>
+<div style="background-color:lightblue">
+<pre>B.java:8: JML postcondition is false
+  public static void setj(int i) {
+                     ^
+B.java:7: Associated declaration: B.java:8: 
+  //@ ensures j == i;
+      ^
+B.java:14: JML postcondition is false
+  public static void main(String[] args) {
+                     ^
+B.java:13: Associated declaration: B.java:14: 
+  //@ ensures j == 1;
+      ^
+</pre>
+</div>
+<p>
+Here you see a postcondition failure reported both by <code>setj</code>, which checks the postconditions on exit, and by <code>main</code>, which checks the postconditions of methods it calls when they return.
+In addition, the postcondition of <code>main</code> fails when <code>main</code> itself exits.
+</p>
+
+
+<!-- 
+<h3>Producing documentation</h3>
+To produce javadoc files with JML specifications inserted, use the following command:
+<div style="background-color:lightblue">
+<pre>
+
+java -jar <i>$OJ</i>/openjml.jar -doc -no-purityCheck </code><i>files-or-packages</i>
+
+</pre>
+</div>
+ -->
+ 
+<p class="note">    
+<script language="Javascript">
+document.write("This page was last modified on: " + document.lastModified +"");
+</script>This page was last modified on: 11/03/2021 03:40:25
+</p>
+  
+  </div>
+  </div>
+
+<!--
+<p class="title">Valid</p>
+<p><a href="http://validator.w3.org/check/referer">XHTML 1.0</a></p>
+<p><a href="http://jigsaw.w3.org/css-validator/check/referer">CSS2</a></p>
+-->
+
+
+  
+
+
+
+ 
+<!--
+     FILE ARCHIVED ON 13:30:53 Feb 22, 2019 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 07:40:23 Nov 03, 2021.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
+<!--
+playback timings (ms):
+  captures_list: 119.684
+  exclusion.robots: 0.183
+  exclusion.robots.policy: 0.177
+  RedisCDXSource: 1.412
+  esindex: 0.007
+  LoadShardBlock: 100.471 (3)
+  PetaboxLoader3.datanode: 127.658 (4)
+  CDXLines.iter: 15.503 (3)
+  load_resource: 191.765
+  PetaboxLoader3.resolve: 105.65
+--></body></html>

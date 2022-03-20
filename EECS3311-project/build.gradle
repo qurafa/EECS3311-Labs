@@ -1,0 +1,38 @@
+plugins {
+    id 'application'
+    id 'java-library'
+    id 'jacoco'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging{
+        events 'passed', 'skipped', 'failed'
+    }
+    finalizedBy jacocoTestReport
+}
+
+jacoco {
+    toolVersion "0.8.6"
+    reportsDirectory = file("buildDir/customJacocoReportDir")
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(8)
+    }
+}
+
+mainClassName = 'Main'

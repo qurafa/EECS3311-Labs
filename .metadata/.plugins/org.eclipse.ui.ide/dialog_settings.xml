@@ -7,6 +7,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/faruq/EECS3311-Labs/EECS3311-Lab1/eecs3311-lab1"/>
+			<item value="/Users/faruq/EECS3311-Labs/lab2/eecs3311-lab2"/>
 			<item value="/Users/faruq/EECS3311 Labs/lab2/eecs3311-lab2"/>
 			<item value="/Users/faruq/EECS3311 Labs/EECS3311-Lab1"/>
 			<item value="/Users/faruq/EECS3311 Labs/commons-io-2.5"/>
@@ -28,5 +30,16 @@
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
 			<item value="/Users/faruq/EECS3311 Labs/commons-io-2.5"/>
 		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.buildship.ui.wizard.project.creation"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.buildship.ui.creationwizards"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.m2e"/>
+		</list>
+	</section>
+	<section name="BasicNewProjectResourceWizard">
 	</section>
 </section>
