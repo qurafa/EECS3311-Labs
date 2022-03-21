@@ -27,6 +27,7 @@ public class Main {
         frame.add(redPanel); frame.add(bluePanel);; frame.add(greenPanel);
 
         System.out.println("done");
+        Test.TestRun();
         /////////JLabel/////////
 //        //a gui display area for text, image or both
 //        ImageIcon image = new ImageIcon("Sig3 copy.png");
