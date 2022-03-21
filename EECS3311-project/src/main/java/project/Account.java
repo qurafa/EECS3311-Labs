@@ -15,4 +15,6 @@ public abstract class Account {
 
     //deleting the account
     private void deleteAccount(){}
+
+    abstract void createAccount();
 }

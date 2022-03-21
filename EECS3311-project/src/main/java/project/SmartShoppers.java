@@ -10,7 +10,7 @@ public class SmartShoppers {
     private Map<Item,Integer> ITEMS;//list of all items and their total amount in the SS System
     private List<Store> STORES;
     private List<Account> ACCOUNTS;
-    int itemID;
+    private int lastItemID;
 
     public static SmartShoppers getInstance(){
         return sys;
@@ -52,9 +52,11 @@ public class SmartShoppers {
                     if(line != 0){
                         String[] itemPriceTotal = row.split(",");
                         double price = Integer.parseInt(itemPriceTotal[2]);
-                        Item item = new Item(itemPriceTotal[1], price);
+                        int id = Integer.parseInt(itemPriceTotal[0]);
+                        Item item = new Item(id, itemPriceTotal[1], price);
                         int total = Integer.parseInt(itemPriceTotal[3]);
                         ITEMS.put(item, total);
+                        lastItemID = id;
                     }
                     line++;
                 }
@@ -88,7 +90,6 @@ public class SmartShoppers {
 
     //creating an account
     private Account createAccount(){
-
         return null;
     }
 
@@ -101,9 +102,8 @@ public class SmartShoppers {
         int i = S.length;
     }
 
-    //checking if it's a valid username
-    private boolean validAccount(){
-
+    //checking if the username is one that has been used before
+    private boolean validUsername(){
         return false;
     }
 
@@ -116,7 +116,8 @@ public class SmartShoppers {
     //creating an item to the system
     private void createItem(String name, double price){
         try{
-            Item item = new Item(name, price);
+            lastItemID++;
+            Item item = new Item(lastItemID, name, price);
             ITEMS.put(item, 0);
             FileWriter writer = new FileWriter("database/Items.csv");
             writer.append(item.getName()+","+item.getPrice()+","+0+","+item.getSale()+"\n");
@@ -128,7 +129,8 @@ public class SmartShoppers {
     //creating an item to the system without specifying the sale
     private void createItem(String name, double price, int totalAmount){
         try{
-            Item item = new Item(name, price);
+            lastItemID++;
+            Item item = new Item(lastItemID, name, price);
             ITEMS.put(item, totalAmount);
             FileWriter writer = new FileWriter("database/Items.csv");
             writer.append(item.getName()+","+item.getPrice()+","+totalAmount+","+item.getSale()+"\n");
@@ -140,7 +142,8 @@ public class SmartShoppers {
     //creating an item to the system
     private void createItem(String name, double price, int totalAmount, int sale){
         try{
-            Item item = new Item(name, price, sale);
+            lastItemID++;
+            Item item = new Item(lastItemID, name, price, sale);
             ITEMS.put(item, totalAmount);
             FileWriter writer = new FileWriter("database/Items.csv");
             writer.append(item.getName()+","+item.getPrice()+","+totalAmount+","+item.getSale()+"\n");
@@ -153,10 +156,15 @@ public class SmartShoppers {
     private void deleteItem(){}
 
     //adding an item to a specific store, if you don't specify the amount, all of it goes to the store
-    private void addItem(){}
+    //you can only add items that are already created
+    private void addItem(Store store, Item item, int amount){
+        store.addItem(item, amount);
+    }
 
     //removing an item from a specific store, if you don't specify the amount, all of it is removed from the store
-    private void removeItem(){}
+    private void removeItem(Store store, Item item, int amount){
+        store.removeItem(item, amount);
+    }
 
     //to get the total number of items in system
     private void getTotalNumberOfItem(){}
