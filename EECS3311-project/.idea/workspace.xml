@@ -5,22 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda29c71-3dc8-43e8-9bca-fecdaaa0bae0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/AdminAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/ManagerAccount.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/UserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/SmartShoppers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/SmartShoppers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Store.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/faruq/.android/avd/Pixel_2_API_28.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -130,6 +123,8 @@
       <workItem from="1647627142499" duration="2959000" />
       <workItem from="1647731677355" duration="1137000" />
       <workItem from="1647793029065" duration="929000" />
+      <workItem from="1647884136928" duration="74000" />
+      <workItem from="1647894084747" duration="2596000" />
     </task>
     <servers />
   </component>
@@ -146,6 +141,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

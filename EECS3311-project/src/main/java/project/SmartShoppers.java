@@ -10,7 +10,7 @@ public class SmartShoppers {
     private Map<Item,Integer> ITEMS;//list of all items and their total amount in the SS System
     private List<Store> STORES;
     private List<Account> ACCOUNTS;
-    private int lastItemID;
+    private int lastItemID;///to keep track of the id of the last item
 
     public static SmartShoppers getInstance(){
         return sys;
@@ -38,7 +38,7 @@ public class SmartShoppers {
                 file.createNewFile();
                 System.out.println("file created");
                 FileWriter writer = new FileWriter("database/Items.csv");
-                writer.append("ID,Item,Price,Total,Sale\n");
+                writer.append("ID,Item,Price,Total,Sale,Categories\n");
                 writer.close();
             }catch(IOException e){
                 System.out.println(e.getMessage());
@@ -120,7 +120,7 @@ public class SmartShoppers {
             Item item = new Item(lastItemID, name, price);
             ITEMS.put(item, 0);
             FileWriter writer = new FileWriter("database/Items.csv");
-            writer.append(item.getName()+","+item.getPrice()+","+0+","+item.getSale()+"\n");
+            writer.append(lastItemID+","+item.getName()+","+item.getPrice()+","+0+","+item.getSale()+","+"null"+"\n");
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
@@ -133,7 +133,7 @@ public class SmartShoppers {
             Item item = new Item(lastItemID, name, price);
             ITEMS.put(item, totalAmount);
             FileWriter writer = new FileWriter("database/Items.csv");
-            writer.append(item.getName()+","+item.getPrice()+","+totalAmount+","+item.getSale()+"\n");
+            writer.append(lastItemID+","+item.getName()+","+item.getPrice()+","+totalAmount+","+item.getSale()+","+"null"+"\n");
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
@@ -146,7 +146,7 @@ public class SmartShoppers {
             Item item = new Item(lastItemID, name, price, sale);
             ITEMS.put(item, totalAmount);
             FileWriter writer = new FileWriter("database/Items.csv");
-            writer.append(item.getName()+","+item.getPrice()+","+totalAmount+","+item.getSale()+"\n");
+            writer.append(lastItemID+","+item.getName()+","+item.getPrice()+","+totalAmount+","+item.getSale()+","+"null"+"\n");
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
