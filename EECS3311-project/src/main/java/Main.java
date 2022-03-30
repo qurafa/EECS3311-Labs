@@ -1,33 +1,70 @@
-import javax.swing.*;
-import javax.swing.border.Border;
-import java.awt.*;
+import frames.LoginFrame;
+import project.Database;
+import project.SmartShoppers;
 
 public class Main {
 
     public static void main(String[] args){
+        ///////////Project test///////////
+        //initialize database
+        Database.createDatabase();
+        Database.initTables();
+
+        //create smart shoppers system
+        SmartShoppers smartShoppers = SmartShoppers.getInstance();
+
+        //bringup login frame to get started...
+        LoginFrame frame = new LoginFrame();
+
+        ///////////SwingTutorial///////////
+        /////////Textfield/////////
+        //frames.MyFrame frame = new frames.MyFrame();
+
+        /////////JButton/////////
+        // the button triggers and action listener event
+        //new frames.MyFrame();
 
         /////////JPanel/////////
-        JPanel redPanel = new JPanel();
-        redPanel.setBackground(Color.red);
-        redPanel.setBounds(0,0,250,250);
+//        JLabel label = new JLabel();
+//        label.setText("HI!!!");
+//        label.setVerticalAlignment(JLabel.TOP);
+//        label.setHorizontalAlignment(JLabel.LEFT);
+//        label.setBounds(0,0,75,75);
+//        //using setBounds when the layout for its container is set to null can be used to set the position
+//        //relative to the corner of the container it is in, where the corner is (0,0)
+//
+//        JPanel redPanel = new JPanel();
+//        redPanel.setBackground(Color.red);
+//        redPanel.setBounds(0,0,250,250);
+//        redPanel.setLayout(null);
+//        //redPanel.setLayout(new BorderLayout());
+//
+//        JPanel bluePanel = new JPanel();
+//        bluePanel.setBackground(Color.blue);
+//        bluePanel.setBounds(250,0,250,250);
+//        bluePanel.setLayout(null);
+//        //bluePanel.setLayout(new BorderLayout());
+//
+//        JPanel greenPanel = new JPanel();
+//        greenPanel.setBackground(Color.green);
+//        greenPanel.setBounds(0,250,500,250);
+//        greenPanel.setLayout(null);
+//        //greenPanel.setLayout(new BorderLayout());
+//        //using the BorderLayout initially sets the added things to the left horizontally and
+//        //centered vertically by default, but we can set the vertical and horizontal alignment using the label.setVerticalAlignment/setHorizontalAlignment
+//
+//        JFrame frame = new JFrame();
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setLayout(null);
+//        frame.setSize(750,750);
+//        frame.setVisible(true);
+//        //adding the label to our panels
+//        //greenPanel.add(label);
+//        bluePanel.add(label);
+//        //redPanel.add(label);
+//        //adding the JPanels to the frame
+//        frame.add(redPanel); frame.add(bluePanel); frame.add(greenPanel);
 
-        JPanel bluePanel = new JPanel();
-        bluePanel.setBackground(Color.red);
-        bluePanel.setBounds(250,250,250,250);
-
-        JPanel greenPanel = new JPanel();
-        greenPanel.setBackground(Color.red);
-        greenPanel.setBounds(250,250,500,250);
-
-        JFrame frame = new JFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
-        frame.setSize(750,750);
-        frame.setVisible(true);
-        frame.add(redPanel); frame.add(bluePanel);; frame.add(greenPanel);
-
-        System.out.println("done");
-        Test.TestRun();
         /////////JLabel/////////
 //        //a gui display area for text, image or both
 //        ImageIcon image = new ImageIcon("Sig3 copy.png");
@@ -60,7 +97,7 @@ public class Main {
 
         /////////JFrame/////////
 //        JFrame frame = new JFrame();//making JFrame
-//        frame.setTitle("JFrame Test");//settign JFrame title
+//        frame.setTitle("JFrame Test");//setting JFrame title
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//setting it so the program ends when the exit key is pressed
 //        //normally HIDE_ON_CLOSE by default
 //        frame.setResizable(false);//whether we can resize the frame or not...

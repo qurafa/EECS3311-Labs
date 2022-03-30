@@ -4,27 +4,48 @@ import java.util.List;
 
 public class Item {
     private int itemID;
-    private String name;
-    private double price;
-    private int sale = 0;
+    private String itemDesc;
+    private double itemPrice;
+    private int totalAmount;
+    private int sale;
+    private double searchRate = 0;
 
-    public Item(int itemID ,String name, double price){
-        this.itemID = itemID;
-        this.name = name;
-        this.price = price;
+    public Item(){}
+
+    public void setID(int id){
+        itemID = id;
     }
 
-    public Item(int itemID, String name, double price, int sale){
-        new Item(itemID, name, price);
+    public void setDescription(String desc){
+        itemDesc = desc;
+    }
+
+    public void setPrice(double price){
+        itemPrice = price;
+    }
+
+    public void setTotalAmount(int amount){
+        totalAmount = amount;
+    }
+
+    public void setSale(int sale){
         this.sale = sale;
     }
 
-    public String getName(){
-        return name;
+    public int getID(){
+        return itemID;
+    }
+
+    public String getDescription(){
+        return itemDesc;
     }
 
     public double getPrice(){
-        return price;
+        return itemPrice;
+    }
+
+    public int getTotalAmount(){
+        return totalAmount;
     }
 
     public int getSale(){
@@ -32,9 +53,6 @@ public class Item {
     }
 
     public boolean equals(Item item){
-        if(item.getName() == this.name)
-            return true;
-
-        return false;
+        return item.getDescription().equals(this.itemDesc);
     }
 }

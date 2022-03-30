@@ -14,6 +14,7 @@ repositories {
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.28'
 }
 
 test {
@@ -31,7 +32,7 @@ jacoco {
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(8)
+        languageVersion.set(JavaLanguageVersion.of(8))
     }
 }
 

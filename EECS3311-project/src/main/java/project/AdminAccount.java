@@ -1,8 +1,13 @@
 package project;
 
 public class AdminAccount extends Account{
-    @Override
-    void createAccount() {
 
+    private int accountCode;
+
+    public AdminAccount(){
+        super();
     }
+
+    private void removeManager(){}
+
 }

@@ -5,9 +5,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda29c71-3dc8-43e8-9bca-fecdaaa0bae0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frames/AdminHomePageFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frames/CreateAccountFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frames/HomeFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frames/LoginFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frames/MyFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frames/SelectLocationFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/HomePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/Location.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/PopUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/Account.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/SmartShoppers.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/SmartShoppers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/project/Store.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/AdminAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/AdminAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/ManagerAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/ManagerAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/SmartShoppers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/SmartShoppers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/CustomerAccount.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +61,17 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <projects_view />
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="EECS3311-project" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
       </state>
     </system>
   </component>
@@ -79,12 +125,54 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="EECS3311-project.main" />
+      <module name="EECS3311-project" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="EECS3311-project [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="EECS3311-project [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="EECS3311-project" type="GradleRunConfiguration" factoryName="Gradle" nameIsGenerated="true">
       <ExternalSystemSettings>
@@ -108,7 +196,16 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.EECS3311-project" />
+      <item itemvalue="Gradle.EECS3311-project [dependencies]" />
+      <item itemvalue="Gradle.EECS3311-project [test]" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.EECS3311-project [test]" />
+        <item itemvalue="Gradle.EECS3311-project [dependencies]" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

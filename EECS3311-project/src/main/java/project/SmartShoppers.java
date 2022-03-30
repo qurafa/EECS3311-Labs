@@ -1,13 +1,14 @@
 package project;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class SmartShoppers {
     private static final SmartShoppers sys = new SmartShoppers();
-    private Map<Item,Integer> ITEMS;//list of all items and their total amount in the SS System
+    private List<Item> ITEMS;//list of all items and their total amount in the SS System
     private List<Store> STORES;
     private List<Account> ACCOUNTS;
     private int lastItemID;///to keep track of the id of the last item
@@ -16,7 +17,7 @@ public class SmartShoppers {
         return sys;
     }
 
-    //System constructor
+    //SmartShoppers private constructor
     private SmartShoppers(){
         System.out.println("Creating System...");
         initItems();
@@ -31,52 +32,21 @@ public class SmartShoppers {
     //initializing the items from the database
     private void initItems(){
         System.out.println("Initializing Items...");
-        ITEMS = new HashMap<Item,Integer>();
-        File file = new File("database/Items.csv");
-        if(!file.isFile()){
-            try{
-                file.createNewFile();
-                System.out.println("file created");
-                FileWriter writer = new FileWriter("database/Items.csv");
-                writer.append("ID,Item,Price,Total,Sale,Categories\n");
-                writer.close();
-            }catch(IOException e){
-                System.out.println(e.getMessage());
-            }
-        }else{
-            try{
-                BufferedReader reader = new BufferedReader(new FileReader("database/Items.csv"));
-                int line = 0;
-                String row;
-                while((row = reader.readLine()) != null){
-                    if(line != 0){
-                        String[] itemPriceTotal = row.split(",");
-                        double price = Integer.parseInt(itemPriceTotal[2]);
-                        int id = Integer.parseInt(itemPriceTotal[0]);
-                        Item item = new Item(id, itemPriceTotal[1], price);
-                        int total = Integer.parseInt(itemPriceTotal[3]);
-                        ITEMS.put(item, total);
-                        lastItemID = id;
-                    }
-                    line++;
-                }
-                reader.close();
-            }catch(Exception e){
-                System.out.println(e.getMessage());
-            }
-        }
+        ITEMS = Database.getAllItems();
         System.out.println("Done Initializing Items...");
     }
 
     //initializing the stores from the database
     private void initStores(){
         System.out.println("Initializing Stores...");
+        STORES = Database.getAllStores();
         System.out.println("Done Initializing Stores...");
     }
 
     //initializing the Accounts from the database
     private void initAccounts(){
         System.out.println("Initializing Accounts...");
+        ACCOUNTS = Database.getAllAccounts();
         System.out.println("Done Initializing Accounts...");
     }
 
@@ -88,72 +58,84 @@ public class SmartShoppers {
         return expected.equals(actual);
     }
 
-    //creating an account
-    private Account createAccount(){
-        return null;
+    //creating an account, where type ranges from 0 to 2
+    public Account createAccount(int type, String username, String password){
+        Account account = null;
+        if(type == 0){
+            account = new AdminAccount();
+        }
+        else if(type == 1){
+            account = new ManagerAccount();
+        }
+        else if(type == 2){
+            account = new CustomerAccount();
+        }
+
+        account.setUserName(username);
+        account.setPassword(password);
+        //set the id and stuff in
+        Database.addAccount(account);
+
+        ACCOUNTS.add(account);
+
+        return account;
     }
 
     //deleting an account
-    private void deleteAccount(){}
+    private void deleteAccount(Account account){}
 
-    //getting an account based on the username
+    //TODO getting an account based on the username
     private void getAccount(String username){
         long[] S = new long []{};
         int i = S.length;
     }
 
     //checking if the username is one that has been used before
-    private boolean validUsername(){
+    public boolean verifyUsername(String username){
         return false;
     }
 
-    //granting privilege to a specified manager, usually the manager
-    private void grantPrivilege(){}
-
-    //revoking privilege from a specified manager
-    private void revokePrivilege(){}
-
-    //creating an item to the system
-    private void createItem(String name, double price){
-        try{
-            lastItemID++;
-            Item item = new Item(lastItemID, name, price);
-            ITEMS.put(item, 0);
-            FileWriter writer = new FileWriter("database/Items.csv");
-            writer.append(lastItemID+","+item.getName()+","+item.getPrice()+","+0+","+item.getSale()+","+"null"+"\n");
-        }catch(Exception e){
-            System.out.println(e.getMessage());
+    //checking if the username is one that has been used before
+    public boolean verifyNewUsername(String username){
+        for(Account a : ACCOUNTS){
+            System.out.println("Account a: " + a.getUserName() + " == " + username + "?");
+            if(a.getUserName().equals(username))
+                return false;
         }
+        return true;
     }
 
-    //creating an item to the system without specifying the sale
-    private void createItem(String name, double price, int totalAmount){
-        try{
-            lastItemID++;
-            Item item = new Item(lastItemID, name, price);
-            ITEMS.put(item, totalAmount);
-            FileWriter writer = new FileWriter("database/Items.csv");
-            writer.append(lastItemID+","+item.getName()+","+item.getPrice()+","+totalAmount+","+item.getSale()+","+"null"+"\n");
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
+    public boolean verifyPassword(String password){
+        return false;
     }
 
-    //creating an item to the system
-    private void createItem(String name, double price, int totalAmount, int sale){
-        try{
-            lastItemID++;
-            Item item = new Item(lastItemID, name, price, sale);
-            ITEMS.put(item, totalAmount);
-            FileWriter writer = new FileWriter("database/Items.csv");
-            writer.append(lastItemID+","+item.getName()+","+item.getPrice()+","+totalAmount+","+item.getSale()+","+"null"+"\n");
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
+    public boolean verifyNewPassword(String password){
+        return true;
     }
 
-    //deleting an item from the whole system
-    private void deleteItem(){}
+    //type is 0 for admin, type is 1 for manager
+    public boolean verifyCode(int type, int code){
+        if(type == 0)
+            return code == 3305;
+        if(type == 1)
+            return code == 3305 || code == 4372;
+
+        return false;
+    }
+
+    //TODO granting privilege to a specified manager
+    private void grantPrivilege(Account manager){}
+
+    //TODO revoking privilege from a specified manager
+    private void revokePrivilege(Account manager){}
+
+    //creating an item to the system without specifying the total amount
+    private Item createItem(){
+        return new Item();
+    }
+
+    //TODO deleting an item from the whole system
+    private void deleteItem(Item item){}
 
     //adding an item to a specific store, if you don't specify the amount, all of it goes to the store
     //you can only add items that are already created
@@ -170,18 +152,76 @@ public class SmartShoppers {
     private void getTotalNumberOfItem(){}
 
     //creating a store for the system
-    private void createStore(){}
+    private Store createStore(){
+        return new Store();
+    }
 
     //deleting a store from the system
-    private void deleteStore(){}
-
-    //getting a list of all the items, maybe based on specifications given
-    private void getItems(){}
-
-    //getting a list of all the stores
-    private void getStores(){}
+    private void deleteStore(Store store){}
 
     //getting a list of all accounts
-    private void getAccounts(){}
+    private List<Account> getAccounts(){
+        return ACCOUNTS;
+    }
 
+    public List<Account> getCustomerAccounts(){
+        List <Account> output = new ArrayList<Account>();
+
+        for(Account c : getAccounts())
+            if(c.getClass().getName().toLowerCase().contains("customer")) output.add(c);
+
+        return output;
+    }
+
+    public List<Account> getManagerAccounts(){
+        List <Account> output = new ArrayList<Account>();
+
+        for(Account c : getAccounts())
+            if(c.getClass().getName().toLowerCase().contains("manager")) output.add(c);
+
+        return output;
+    }
+
+    public List<Account> getAdminAccounts(){
+        List <Account> output = new ArrayList<Account>();
+
+        for(Account c : getAccounts())
+            if(c.getClass().getName().toLowerCase().contains("admin")) output.add(c);
+
+        return output;
+    }
+
+    //getting a list of all the stores
+    public List<Store> getStores(){
+        return STORES;
+    }
+
+    //getting a list of all the items, maybe based on specifications given
+    private List<Item> getItems(){
+        return new ArrayList<Item>(ITEMS);
+    }
+
+    private int getNumberOfAccount(){
+        return getAccounts().size();
+    }
+
+    public int getNumberOfCustomerAccounts(){
+        return getCustomerAccounts().size();
+    }
+
+    public int getNumberOfManagerAccounts(){
+        return getManagerAccounts().size();
+    }
+
+    public int getNumberOfAdminAccounts(){
+        return getAdminAccounts().size();
+    }
+
+    public int getNumberOfStores(){
+        return getStores().size();
+    }
+
+    public int getNumberOfItems(){
+        return getItems().size();
+    }
 }

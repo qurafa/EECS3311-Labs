@@ -1,20 +1,65 @@
 package project;
 
 public abstract class Account {
-    private String userName;
+    private int accountID;
+    private String username;
     private String password;
+    private int accountCode;
+    private boolean loggedIn;//maybe remove later, for the ability to log in from different accounts
 
     //Account constructor
-    public Account(){}
+    public Account(){
+        setAccountCode();
+    }
+
+    public void setID(int id){
+        accountID = id;
+    }
+
+    public int getID(){
+        return accountID;
+    }
 
     //setting the username for this account
-    private void setUserName(String userName){}
+    public void setUserName(String username){
+        this.username = username;
+    }
+
+    //getting the username attached to the account
+    public String getUserName(){
+        return this.username;
+    }
 
     //setting the password for this account
-    private void setPassword(String password){}
+    public void setPassword(String password){
+        this.password = password;
+    }
 
-    //deleting the account
-    private void deleteAccount(){}
+    //getting the password attached to the account
+    public String getPassword(){
+        return this.password;
+    }
 
-    abstract void createAccount();
+    //setting a specific code for the account
+    //changing it from an already existing one, if already exists and setting a new one if it doesn't
+    //return it only after it has been set
+    public int setAccountCode(){
+        return -1;
+    }
+
+    public void setAccountCode(int code){
+        accountCode = code;
+    }
+
+    public int getAccountCode(){
+        return accountCode;
+    }
+
+    private void searchItem(){}
+
+    private void searchLocation(){}
+
+    private void getAccountInfo(){}
+
+    private void delete(){}
 }
