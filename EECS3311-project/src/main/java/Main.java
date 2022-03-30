@@ -2,10 +2,15 @@ import frames.LoginFrame;
 import project.Database;
 import project.SmartShoppers;
 
+import java.awt.*;
+
 public class Main {
 
     public static void main(String[] args){
         ///////////Project test///////////
+        Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
+        System.out.println("Screen Size: " + size.toString());
+
         //initialize database
         Database.createDatabase();
         Database.initTables();
