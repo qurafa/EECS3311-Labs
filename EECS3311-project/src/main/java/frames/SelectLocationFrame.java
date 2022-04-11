@@ -1,7 +1,6 @@
 package frames;
 
-import project.SmartShoppers;
-import project.Store;
+import project.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,32 +11,43 @@ import java.util.List;
 
 public class SelectLocationFrame extends JFrame implements ActionListener {
 
+    Account account;
+    int accountType;
+
     JFrame from;
+
+    JComboBox storeComboBox;
+
     JButton backButton;
     JButton doneButton;
 
     //TODO add observer for when the store is updated or another store is added or removed
 
-    public SelectLocationFrame(int type){
-        if(type == 0 || type == 1){
+    public SelectLocationFrame(Account account){
+        this.account = account;
+        System.out.println("Name!!!!! " + account.getClass().getName());
+        accountType = (account.getClass().getName().contains("Customer")) ? 0 :
+                (account.getClass().getName().contains("Manager")) ? 1 : -1;
+
+        if(accountType == 0)account = (CustomerAccount) account;
+        if(accountType == 1)account = (ManagerAccount) account;
+
+        if(accountType == 0 || accountType == 1){
             System.out.println("Start Select Location Frame");
 
             JLabel selectStoreLabel = new JLabel();
-            selectStoreLabel.setText(type == 0 ?
+            selectStoreLabel.setText(accountType == 0 ?
                     "Select Preferred Shopping Location" :
                     "Select Assigned Store Location");
             selectStoreLabel.setFont(new Font("Consolas", Font.PLAIN, 35));
             selectStoreLabel.setBounds(175, 125, 650, 100);
 
-            List<Store> store = SmartShoppers.getInstance().getStores();
-
             List<String> storesString = new ArrayList<String>();
-
-            for (Store s : store){
+            for (Store s : SmartShoppers.getInstance().getStores()){
                 storesString.add(s.getLocation().toString());
             }
 
-            JComboBox<String> storeComboBox = new JComboBox(storesString.toArray());
+            storeComboBox = new JComboBox(storesString.toArray());
             storeComboBox.setBounds(175,250,650,100);
 
             doneButton = new JButton("Done >");
@@ -58,12 +68,12 @@ public class SelectLocationFrame extends JFrame implements ActionListener {
             System.out.println("Done Select Location Frame");
         }
         else{
-            System.out.println("Incorrect type SelectLocationFrame");
+            System.out.println("Incorrect accountType SelectLocationFrame");
         }
     }
 
-    public SelectLocationFrame(int type, JFrame from){
-        this(type);
+    public SelectLocationFrame(Account account, JFrame from){
+        this(account);
         this.from = from;
 
         backButton = new JButton("< Back");
@@ -79,6 +89,18 @@ public class SelectLocationFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        if(e.getSource() == doneButton && storeComboBox.getSelectedItem() != null){
+            account.setStore(SmartShoppers.getInstance().getStore(storeComboBox.getSelectedItem().toString()));
+            Database.setAccountStore(account.getID(), account.getStore());
+
+            if(accountType == 1)
+                new ManagerAccountFrame((ManagerAccount) account);
+            else if(accountType == 0)
+                new CustomerAccountFrame((CustomerAccount) account);
+
+            this.dispose();
+        }
+
         if(e.getSource() == backButton){
             this.setVisible(false);
             from.setVisible(true);

@@ -1,6 +1,7 @@
 package frames;
 
 import project.Account;
+import project.AdminAccount;
 import project.SmartShoppers;
 
 import javax.swing.*;
@@ -15,10 +16,16 @@ public class CreateAccountFrame extends JFrame implements ActionListener {
     JRadioButton userRoleRadioButton;
     JRadioButton managerRoleRadioButton;
     JRadioButton adminRoleRadioButton;
+    JLabel firstNameLabel;
+    JTextField firstName;
+    JLabel lastNameLabel;
+    JTextField lastName;
     JLabel usernameLabel;
     JTextField username;
     JLabel passwordLabel;
-    JTextField password;
+    JPasswordField password;
+    JLabel confirmPasswordLabel;
+    JPasswordField confirmPassword;
     JLabel verificationCodeLabel;
     JTextField verificationCode;
     JButton createAccountButton;//to create an account and log you in...
@@ -55,10 +62,34 @@ public class CreateAccountFrame extends JFrame implements ActionListener {
         group.add(managerRoleRadioButton);
         group.add(adminRoleRadioButton);
 
+        firstNameLabel = new JLabel("First Name");
+        firstNameLabel.setFont(new Font("Consolas", Font.PLAIN, 35));
+        firstNameLabel.setBounds(250, 125, 500, 100);
+
+        firstName = new JTextField();
+        firstName.setPreferredSize(new Dimension(250,40));
+        firstName.setFont(new Font("Consolas", Font.PLAIN, 35));
+        firstName.setForeground(new Color(0x00FF00));
+        firstName.setBackground(Color.black);
+        firstName.setCaretColor(Color.white);
+        firstName.setBounds(250, 200, 500, 100);
+
+        lastNameLabel = new JLabel("Last Name");
+        lastNameLabel.setFont(new Font("Consolas", Font.PLAIN, 35));
+        lastNameLabel.setBounds(250, 325, 500, 100);
+
+        lastName = new JTextField();
+        lastName.setPreferredSize(new Dimension(250,40));
+        lastName.setFont(new Font("Consolas", Font.PLAIN, 35));
+        lastName.setForeground(new Color(0x00FF00));
+        lastName.setBackground(Color.black);
+        lastName.setCaretColor(Color.white);
+        lastName.setBounds(250, 400, 500, 100);
+
         usernameLabel = new JLabel();
         usernameLabel.setText("Username");
         usernameLabel.setFont(new Font("Consolas", Font.PLAIN, 35));
-        usernameLabel.setBounds(250, 125, 500, 100);
+        usernameLabel.setBounds(250, 525, 500, 100);
 
         username = new JTextField();
         username.setPreferredSize(new Dimension(250,40));
@@ -66,25 +97,38 @@ public class CreateAccountFrame extends JFrame implements ActionListener {
         username.setForeground(new Color(0x00FF00));
         username.setBackground(Color.black);
         username.setCaretColor(Color.white);
-        username.setBounds(250, 200, 500, 100);
+        username.setBounds(250, 600, 500, 100);
 
         passwordLabel = new JLabel();
         passwordLabel.setText("Password");
         passwordLabel.setFont(new Font("Consolas", Font.PLAIN, 35));
-        passwordLabel.setBounds(250, 325, 500, 100);
+        passwordLabel.setBounds(250, 725, 500, 100);
 
-        password = new JTextField();
+        password = new JPasswordField();
         password.setPreferredSize(new Dimension(250,40));
         password.setFont(new Font("Consolas", Font.PLAIN, 35));
         password.setForeground(new Color(0x00FF00));
         password.setBackground(Color.black);
         password.setCaretColor(Color.white);
-        password.setBounds(250, 400, 500, 100);
+        password.setBounds(250, 800, 500, 100);
+
+        confirmPasswordLabel = new JLabel();
+        confirmPasswordLabel.setText("Confirm Password");
+        confirmPasswordLabel.setFont(new Font("Consolas", Font.PLAIN, 35));
+        confirmPasswordLabel.setBounds(800, 725, 500, 100);
+
+        confirmPassword = new JPasswordField();
+        confirmPassword.setPreferredSize(new Dimension(250,40));
+        confirmPassword.setFont(new Font("Consolas", Font.PLAIN, 35));
+        confirmPassword.setForeground(new Color(0x00FF00));
+        confirmPassword.setBackground(Color.black);
+        confirmPassword.setCaretColor(Color.white);
+        confirmPassword.setBounds(800, 800, 500, 100);
 
         verificationCodeLabel = new JLabel();
         verificationCodeLabel.setText("Verification Code");
         verificationCodeLabel.setFont(new Font("Consolas", Font.PLAIN, 35));
-        verificationCodeLabel.setBounds(250, 525, 500, 100);
+        verificationCodeLabel.setBounds(250, 925, 500, 100);
 
         verificationCode = new JTextField();
         verificationCode.setPreferredSize(new Dimension(250,40));
@@ -92,7 +136,7 @@ public class CreateAccountFrame extends JFrame implements ActionListener {
         verificationCode.setForeground(new Color(0x00FF00));
         verificationCode.setBackground(Color.black);
         verificationCode.setCaretColor(Color.white);
-        verificationCode.setBounds(250, 600, 500, 100);
+        verificationCode.setBounds(250, 1000, 500, 100);
 
 //        createAccountButton = new JButton("Create Account");
 //        createAccountButton.setFont(new Font("Consolas", Font.PLAIN, 35));
@@ -104,21 +148,27 @@ public class CreateAccountFrame extends JFrame implements ActionListener {
         createAccountButton.setFont(new Font("Consolas", Font.PLAIN, 35));
         createAccountButton.setFocusable(true);//look at this later...
         createAccountButton.addActionListener(this);
-        createAccountButton.setBounds(350, 550, 300, 50);
+        createAccountButton.setBounds(350, 1125, 300, 50);
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
-        this.setSize(new Dimension(1000, 1000));
+        this.setSize(new Dimension(1500, 1300));
         this.setResizable(false);
         this.setVisible(true);
         this.add(selectRoleLabel);
         this.add(userRoleRadioButton);
         this.add(managerRoleRadioButton);
         this.add(adminRoleRadioButton);
+        this.add(firstNameLabel);
+        this.add(firstName);
+        this.add(lastNameLabel);
+        this.add(lastName);
         this.add(usernameLabel);
         this.add(username);
         this.add(passwordLabel);
         this.add(password);
+        this.add(confirmPasswordLabel);
+        this.add(confirmPassword);
         this.add(verificationCodeLabel);
         this.add(verificationCode);
         this.add(createAccountButton);
@@ -161,7 +211,7 @@ public class CreateAccountFrame extends JFrame implements ActionListener {
             verificationCodeLabel.setVisible(false);
             verificationCode.setVisible(false);
 
-            createAccountButton.setBounds(350, 550, 300, 50);
+            createAccountButton.setBounds(350, 925, 300, 50);
 
             verificationCodeLabel.updateUI();
             verificationCode.updateUI();
@@ -171,7 +221,7 @@ public class CreateAccountFrame extends JFrame implements ActionListener {
             verificationCodeLabel.setVisible(true);
             verificationCode.setVisible(true);
 
-            createAccountButton.setBounds(350, 750, 300, 50);
+            createAccountButton.setBounds(350, 1125, 300, 50);
 
             verificationCodeLabel.updateUI();
             verificationCode.updateUI();
@@ -181,7 +231,7 @@ public class CreateAccountFrame extends JFrame implements ActionListener {
             verificationCodeLabel.setVisible(true);
             verificationCode.setVisible(true);
 
-            createAccountButton.setBounds(350, 750, 300, 50);
+            createAccountButton.setBounds(350, 1125, 300, 50);
 
             verificationCodeLabel.updateUI();
             verificationCode.updateUI();
@@ -193,42 +243,32 @@ public class CreateAccountFrame extends JFrame implements ActionListener {
 
             //TODO verify and make the actual account...
             //verifies the username and password and loads the pop up if need be
-
-            if(!SmartShoppers.getInstance().verifyNewUsername(username.getText()))
-                JOptionPane.showMessageDialog(null, "Invalid Username");
-            if(!SmartShoppers.getInstance().verifyNewPassword(password.getText()))
-                JOptionPane.showMessageDialog(null, "Invalid Password");
-            if(username.getText().length() == 0)
-                JOptionPane.showMessageDialog(null, "Empty Username Field");
-            if(password.getText().length() == 0)
-                JOptionPane.showMessageDialog(null, "Empty Password Field");
-
-            if (!SmartShoppers.getInstance().verifyNewUsername(username.getText()) ||
-                    !SmartShoppers.getInstance().verifyNewPassword(password.getText()) ||
-                    username.getText().length() == 0 ||
-                    password.getText().length() == 0)
-                return;
+            if (!checkInputs()) return;
 
             if(userRoleRadioButton.isSelected()) {
-                SmartShoppers.getInstance().createAccount(2, username.getText(), password.getText());
+                Account account = SmartShoppers.getInstance().createAccount(0, firstName.getText(), lastName.getText(), username.getText(), String.valueOf(password.getPassword()));
                 this.setVisible(false);
-                new SelectLocationFrame(0, this);
+                new SelectLocationFrame(account, this);
             }
             else if(managerRoleRadioButton.isSelected()){
-                if(!SmartShoppers.getInstance().verifyCode(1, Integer.parseInt(verificationCode.getText())))
+                if(!SmartShoppers.getInstance().verifyCode(0, Integer.parseInt(verificationCode.getText()))){
+                    JOptionPane.showMessageDialog(this, "Invalid Verification Code");
                     return;
+                }
 
-                SmartShoppers.getInstance().createAccount(1, username.getText(), password.getText());
+                Account account = SmartShoppers.getInstance().createAccount(1, firstName.getText(), lastName.getText(),  username.getText(), String.valueOf(password.getPassword()));
                 this.setVisible(false);
-                new SelectLocationFrame(1, this);
+                new SelectLocationFrame(account, this);
             }
             else if(adminRoleRadioButton.isSelected()){
-                if(!SmartShoppers.getInstance().verifyCode(0, Integer.parseInt(verificationCode.getText())))
+                if(!SmartShoppers.getInstance().verifyCode(1, Integer.parseInt(verificationCode.getText()))) {
+                    JOptionPane.showMessageDialog(this, "Invalid Verification Code");
                     return;
+                }
 
-                Account a = SmartShoppers.getInstance().createAccount(0, username.getText(), password.getText());
+                Account account = SmartShoppers.getInstance().createAccount(2, firstName.getText(), lastName.getText(),  username.getText(), String.valueOf(password.getPassword()));
                 this.setVisible(false);
-                new AdminHomePageFrame(a);
+                new AdminAccountFrame((AdminAccount) account);
             }
             else{
                 System.out.println("NO ROLE SELECTED");
@@ -240,5 +280,37 @@ public class CreateAccountFrame extends JFrame implements ActionListener {
             this.setVisible(false);
             from.setVisible(true);
         }
+    }
+
+    private boolean checkInputs(){
+        boolean output = true;
+
+        if(!SmartShoppers.getInstance().verifyNewUsername(username.getText())){
+            JOptionPane.showMessageDialog(this, "Invalid Username");
+            output = false;
+        }
+
+        if(!SmartShoppers.getInstance().verifyNewPassword(String.valueOf(password.getPassword())) ||
+                !SmartShoppers.getInstance().verifyNewPassword(String.valueOf(confirmPassword.getPassword()))) {
+            JOptionPane.showMessageDialog(this, "Invalid Password");
+            output = false;
+        }
+
+        if(username.getText().length() == 0){
+            JOptionPane.showMessageDialog(this, "Empty Username Field");
+            output = false;
+        }
+
+        if(String.valueOf(password.getPassword()).length() == 0 || String.valueOf(confirmPassword.getPassword()).length() == 0){
+            JOptionPane.showMessageDialog(this, "Empty Password Field");
+            output = false;
+        }
+
+        if(!String.valueOf(password.getPassword()).equals(String.valueOf(confirmPassword.getPassword()))){
+            JOptionPane.showMessageDialog(this, "Passwords Do Not Match");
+            output = false;
+        }
+
+        return output;
     }
 }

@@ -7,9 +7,11 @@ import java.awt.*;
 public class Main {
 
     public static void main(String[] args){
+        //TODO setting the sizes based on the screen size
         ///////////Project test///////////
-        Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
-        System.out.println("Screen Size: " + size.toString());
+        //testing getting the screen size...
+//        Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
+//        System.out.println("Screen Size: " + size.toString());
 
         //initialize database
         Database.createDatabase();
@@ -18,16 +20,16 @@ public class Main {
         //create smart shoppers system
         SmartShoppers smartShoppers = SmartShoppers.getInstance();
 
-        //bringup login frame to get started...
-        LoginFrame frame = new LoginFrame();
+        //bring up login frame to get started...
+        new LoginFrame();
 
         ///////////SwingTutorial///////////
         /////////Textfield/////////
-        //frames.MyFrame frame = new frames.MyFrame();
+        //MyFrame frame = new MyFrame();
 
         /////////JButton/////////
         // the button triggers and action listener event
-        //new frames.MyFrame();
+        //new MyFrame();
 
         /////////JPanel/////////
 //        JLabel label = new JLabel();

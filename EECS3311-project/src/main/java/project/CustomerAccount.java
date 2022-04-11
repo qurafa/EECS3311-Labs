@@ -2,11 +2,13 @@ package project;
 
 public class CustomerAccount extends Account{
 
+    private ShoppingCart cart;
+
     public CustomerAccount(){
-        super();
+        cart = new ShoppingCart();
     }
 
-    //Maybe divide it into the address,...,country or make a location class
-    public void setPreferredLocation(){}
-
+    public ShoppingCart getCart(){
+        return cart;
+    }
 }

@@ -1,6 +1,0 @@
-INDEX VERSION 1.131+/Users/faruq/EECS3311-Labs/.metadata/.plugins/org.eclipse.jdt.core
-3787740244.index
-984734886.index
-2295711207.index
-1865797976.index
-2259773393.index

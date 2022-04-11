@@ -5,16 +5,123 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fda29c71-3dc8-43e8-9bca-fecdaaa0bae0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/frames/AccountFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frames/AdminAccountFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frames/CustomerAccountFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/frames/ManagerAccountFrame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/AddItemsPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/AddStorePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/AdminCustomersPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/AdminHomePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/AdminItemsPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/AdminManagersPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/AdminStoreItemsPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/AdminStoresPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/CustomerHomePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/CustomerShoppingCartPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/CustomerStorePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/ItemEditPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/ManagerAddItemsPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/ManagerCustomersPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/ManagerHomePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/ManagerItemsPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/ManagerStoresPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/SearchPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/SettingsPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/SidePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/panels/StoreEditPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/Search.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/test/StoreTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.log" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.projects/.org.eclipse.egit.core.cmp/.location" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.projects/.org.eclipse.egit.core.cmp/.location" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.debug.ui.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.debug.ui.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.launching.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.launching.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.debug.ui/dialog_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.debug.ui/dialog_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.core/1865797976.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.launching/.install.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.launching/.install.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.ltk.ui.refactoring/dialog_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.ltk.ui.refactoring/dialog_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.m2e.core/workspaceState.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.ui.ide/dialog_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/.plugins/org.eclipse.ui.ide/dialog_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.metadata/version.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../.metadata/version.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frames/CreateAccountFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/frames/CreateAccountFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/Test.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frames/AdminHomePageFrame$MyAdjustmentListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frames/AdminHomePageFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frames/CreateAccountFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frames/HomeFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frames/LoginFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frames/MyFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/frames/SelectLocationFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/panels/HomePanel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Account.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/AdminAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Administrator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Category.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/CustomerAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Database.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Manager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/ManagerAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/PopUp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/SearchItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/SearchStore.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/SmartShoppers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Staff.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/project/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frames/AdminHomePageFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frames/CreateAccountFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frames/CreateAccountFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frames/HomeFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frames/LoginFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frames/LoginFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frames/MyFrame.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/frames/SelectLocationFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/frames/SelectLocationFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/panels/HomePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/panels/HomePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Account.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/AdminAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/AdminAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Administrator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/CustomerAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/CustomerAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Manager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/ManagerAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/ManagerAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/PopUp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/SearchItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/SearchStore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/SmartShoppers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/SmartShoppers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Staff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/User.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +146,21 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="EECS3311-project" type="f1a62948:ProjectNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="EECS3311-project" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="EECS3311-project" type="f1a62948:ProjectNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="EECS3311-project" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -50,6 +172,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="UML Class" />
         <option value="Class" />
       </list>
     </option>
@@ -75,19 +198,21 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultPlantUmlFileTemplate" value="UML Class" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/MXLify/TAB2MXL" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -95,13 +220,34 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Gradle.EECS3311-project [dependencies]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="EECS3311-project" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="EECS3311-project [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="EECS3311-project [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -164,17 +310,31 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="&lt;default&gt;" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="EECS3311-project" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="PACKAGE" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.EECS3311-project" />
       <item itemvalue="Gradle.EECS3311-project [dependencies]" />
       <item itemvalue="Gradle.EECS3311-project [test]" />
+      <item itemvalue="Gradle.EECS3311-project [build]" />
+      <item itemvalue="TestNG.&lt;default&gt;" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.EECS3311-project [test]" />
         <item itemvalue="Gradle.EECS3311-project [dependencies]" />
+        <item itemvalue="TestNG.&lt;default&gt;" />
+        <item itemvalue="Gradle.EECS3311-project [test]" />
+        <item itemvalue="Gradle.EECS3311-project [build]" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -193,6 +353,8 @@
       <workItem from="1647793029065" duration="929000" />
       <workItem from="1647884136928" duration="74000" />
       <workItem from="1647894084747" duration="2596000" />
+      <workItem from="1649651887882" duration="1939000" />
+      <workItem from="1649654487206" duration="1065000" />
     </task>
     <servers />
   </component>
@@ -209,5 +371,19 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

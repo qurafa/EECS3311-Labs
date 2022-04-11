@@ -28,6 +28,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\gbola\GitHub\EECS3311-Labs\EECS3311-project"/>
 			<item value="/Users/faruq/EECS3311 Labs/commons-io-2.5"/>
 		</list>
 	</section>

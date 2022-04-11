@@ -1,5 +1,10 @@
 package frames;
 
+import project.AdminAccount;
+import project.CustomerAccount;
+import project.ManagerAccount;
+import project.SmartShoppers;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -9,16 +14,13 @@ public class LoginFrame extends JFrame implements ActionListener {
 
     JFrame from;
     JTextField username;
-    JTextField password;
+    JPasswordField password;
     JButton submitButton;
     JButton createAccountButton;//to create an account and log you in...
     JButton backButton;
 
     public LoginFrame() {
         System.out.println("Start LoginFrame");
-
-        //TODO add background to page
-        //TODO add LOGIN words at top of page
 
         JLabel usernameLabel = new JLabel();
         usernameLabel.setText("Username");
@@ -38,7 +40,7 @@ public class LoginFrame extends JFrame implements ActionListener {
         passwordLabel.setFont(new Font("Consolas", Font.PLAIN, 35));
         passwordLabel.setBounds(250, 325, 500, 100);
 
-        password = new JTextField();
+        password = new JPasswordField();
         password.setPreferredSize(new Dimension(250,40));
         password.setFont(new Font("Consolas", Font.PLAIN, 35));
         password.setForeground(new Color(0x00FF00));
@@ -52,7 +54,7 @@ public class LoginFrame extends JFrame implements ActionListener {
         createAccountButton.addActionListener(this);
         createAccountButton.setBounds(250, 550, 300, 50);
 
-        submitButton = new JButton("Submit");
+        submitButton = new JButton("Login");
         submitButton.setFont(new Font("Consolas", Font.PLAIN, 35));
         submitButton.setFocusable(true);//look at this later...
         submitButton.addActionListener(this);
@@ -88,15 +90,32 @@ public class LoginFrame extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == submitButton && username.getText().length() > 0 && password.getText().length() > 0) {
-            System.out.println("Logging in...");
+        if (e.getSource() == submitButton && SmartShoppers.getInstance().verifyLogin(username.getText(), String.valueOf(password.getPassword()))) {
+            System.out.println("Logging In...");
+            if(SmartShoppers.getInstance().getAccountType(username.getText()) == 2)
+                new AdminAccountFrame((AdminAccount) SmartShoppers.getInstance().getAccount(username.getText()));
+            else if(SmartShoppers.getInstance().getAccountType(username.getText()) == 1)
+                new ManagerAccountFrame((ManagerAccount) SmartShoppers.getInstance().getAccount(username.getText()));
+            else if(SmartShoppers.getInstance().getAccountType(username.getText()) == 0)
+                new CustomerAccountFrame((CustomerAccount) SmartShoppers.getInstance().getAccount(username.getText()));
+            else
+                System.out.println("Wrong Account, LoginFrame " + SmartShoppers.getInstance().getAccountType(username.getText()));
+            System.out.println("Not Logging In...");
+            this.dispose();
+        }else if(e.getSource() == submitButton){
+            if(!SmartShoppers.getInstance().verifyUsername(username.getText()))
+                JOptionPane.showMessageDialog(this, "Invalid Username");
+            if(!SmartShoppers.getInstance().verifyPassword(username.getText(), String.valueOf(password.getPassword())))
+                JOptionPane.showMessageDialog(this, "Invalid Password");
         }
+
         if(e.getSource() == createAccountButton){
             //TODO bring up create account page...
             System.out.println("Creating Account...");
             this.setVisible(false);
-            new CreateAccountFrame(username.getText(), password.getText(), this);
+            new CreateAccountFrame(username.getText(), String.valueOf(password.getPassword()), this);
         }
+
         if(e.getSource() == backButton){
             System.out.println("Back from Login");
             this.setVisible(false);

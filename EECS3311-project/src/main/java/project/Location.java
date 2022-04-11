@@ -50,6 +50,10 @@ public class Location {
     }
 
     public String toString(){
-        return this.address + ", " + this.city + ", " + this.state + " " + this.postalCode + ", " + this.country;
+        return this.address + ", " + this.city + ", " + this.state + ", " + this.postalCode + ", " + this.country;
+    }
+
+    public boolean equals(Location location){
+        return this.toString().equals(location.toString());
     }
 }

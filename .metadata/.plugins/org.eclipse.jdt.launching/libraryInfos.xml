@@ -3,6 +3,7 @@
     <libraryInfo home="/Library/Java/JavaVirtualMachines/jdk-15.jdk/Contents/Home" version="15"/>
     <libraryInfo home="/Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home" version="14.0.1"/>
     <libraryInfo home="/Library/Java/JavaVirtualMachines/jdk-15.0.1.jdk/Contents/Home" version="15.0.1"/>
+    <libraryInfo home="C:\Users\gbola\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208" version="17.0.2"/>
     <libraryInfo home="/Users/faruq/Library/Java/JavaVirtualMachines/corretto-1.8.0_282/Contents/Home" version="1.8.0_282">
         <bootpath>
             <entry path="/Users/faruq/Library/Java/JavaVirtualMachines/corretto-1.8.0_282/Contents/Home/jre/lib/resources.jar"/>
@@ -75,4 +76,5 @@
             <entry path="/Users/faruq/Library/Java/JavaVirtualMachines/corretto-1.8.0_312/Contents/Home/jre/lib/endorsed"/>
         </endorsedDirs>
     </libraryInfo>
+    <libraryInfo home="C:\Users\gbola\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.2.v20220201-1208\jre" version="17.0.2"/>
 </libraryInfos>

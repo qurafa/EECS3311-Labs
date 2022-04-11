@@ -1,14 +1,12 @@
 package project;
 
-import java.util.List;
-
 public class Item {
     private int itemID;
     private String itemDesc;
     private double itemPrice;
     private int totalAmount;
     private int sale;
-    private double searchRate = 0;
+    private int suggestPoint = 0;
 
     public Item(){}
 
@@ -53,6 +51,26 @@ public class Item {
     }
 
     public boolean equals(Item item){
-        return item.getDescription().equals(this.itemDesc);
+        return item.toString().equals(this.toString());
+    }
+
+    public int getSuggestPoint(){
+        return suggestPoint;
+    }
+
+    public void setSuggestPoint(int suggestedPoint){
+        this.suggestPoint = suggestedPoint;
+    }
+
+    public void increaseSuggestPoint(){
+        suggestPoint++;
+    }
+
+    public void decreaseSuggestPoint(){
+        suggestPoint--;
+    }
+
+    public String toString(){
+        return itemDesc; //+ ", " + itemPrice + ", " + totalAmount + ", " + sale;
     }
 }

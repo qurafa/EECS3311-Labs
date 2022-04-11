@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>C:/Users/gbola/GitHub/EECS3311-Labs/EECS3311-project/src/main/java</OriginalElement>
+  <nodes>
+    <node x="1618.0" y="0.0">project.Store</node>
+    <node x="0.0" y="1393.0">panels.CustomerShoppingCartPanel</node>
+    <node x="474.0" y="1775.0">frames.CustomerAccountFrame</node>
+    <node x="3827.0" y="1404.0">panels.AdminItemsPanel</node>
+    <node x="3017.0" y="1625.0">frames.CreateAccountFrame</node>
+    <node x="1033.0" y="1382.0">panels.ManagerStoresPanel</node>
+    <node x="992.0" y="481.0">project.ManagerAccount</node>
+    <node x="4348.0" y="1349.0">panels.SettingsPanel</node>
+    <node x="4094.0" y="1625.0">MyFrame</node>
+    <node x="3573.0" y="1404.0">panels.AdminStoresPanel</node>
+    <node x="1601.0" y="1625.0">project.ShoppingCart</node>
+    <node x="716.0" y="1382.0">panels.CustomerStorePanel</node>
+    <node x="0.0" y="1625.0">project.Item</node>
+    <node x="2248.0" y="1404.0">panels.ManagerItemsPanel</node>
+    <node x="3314.0" y="1393.0">panels.ItemEditPanel</node>
+    <node x="3924.0" y="1625.0">Test</node>
+    <node x="1740.0" y="1404.0">panels.AdminManagersPanel</node>
+    <node x="777.0" y="1775.0">frames.ManagerAccountFrame</node>
+    <node x="2653.0" y="1404.0">panels.ManagerCustomersPanel</node>
+    <node x="448.0" y="0.0">project.Database</node>
+    <node x="1836.0" y="1751.0">panels.ManagerHomePanel</node>
+    <node x="2403.0" y="1751.0">panels.AdminHomePanel</node>
+    <node x="4081.0" y="1305.0">panels.StoreEditPanel</node>
+    <node x="0.0" y="0.0">project.SmartShoppers</node>
+    <node x="471.0" y="2013.0">panels.AdminStoreItemsPanel</node>
+    <node x="1071.0" y="1786.0">frames.AdminAccountFrame</node>
+    <node x="0.0" y="2013.0">panels.AddStorePanel</node>
+    <node x="3344.0" y="1625.0">frames.SelectLocationFrame</node>
+    <node x="2152.5" y="1625.0">panels.HomePanel</node>
+    <node x="2956.0" y="1393.0">panels.SearchPanel</node>
+    <node x="1313.0" y="1382.0">panels.ManagerAddItemsPanel</node>
+    <node x="2682.0" y="1625.0">project.Search</node>
+    <node x="462.0" y="1382.0">panels.AddItemsPanel</node>
+    <node x="837.5" y="1625.0">frames.AccountFrame</node>
+    <node x="718.0" y="2013.0">project.SearchStore</node>
+    <node x="2115.0" y="1751.0">panels.CustomerHomePanel</node>
+    <node x="2330.0" y="1179.0">panels.SidePanel</node>
+    <node x="1994.0" y="1404.0">panels.AdminCustomersPanel</node>
+    <node x="1213.0" y="492.5">project.CustomerAccount</node>
+    <node x="892.0" y="2013.0">project.SearchItem</node>
+    <node x="1403.0" y="504.0">project.AdminAccount</node>
+    <node x="1365.0" y="1625.0">project.Category</node>
+    <node x="246.0" y="1625.0">project.Location</node>
+    <node x="279.0" y="2013.0">Main</node>
+    <node x="1212.0" y="0.0">project.Account</node>
+    <node x="3645.0" y="1625.0">frames.LoginFrame</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="panels.AddItemsPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="579.0" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.ManagerStoresPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="1163.0" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.ManagerAddItemsPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="1516.5" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.AdminItemsPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="3944.0" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.StoreEditPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-137.5" />
+      <point x="4204.5" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.ManagerCustomersPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="2794.5" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.ManagerItemsPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="project.CustomerAccount" target="project.Account" relationship="GENERALIZATION">
+      <point x="0.0" y="-50.0" />
+      <point x="0.0" y="215.5" />
+    </edge>
+    <edge source="project.ManagerAccount" target="project.Account" relationship="GENERALIZATION">
+      <point x="0.0" y="-61.5" />
+      <point x="1092.5" y="456.0" />
+      <point x="1298.0" y="456.0" />
+      <point x="0.0" y="215.5" />
+    </edge>
+    <edge source="panels.CustomerShoppingCartPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-49.5" />
+      <point x="221.0" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="frames.CustomerAccountFrame" target="frames.AccountFrame" relationship="GENERALIZATION">
+      <point x="0.0" y="-49.5" />
+      <point x="615.5" y="1750.0" />
+      <point x="914.0" y="1750.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="panels.ItemEditPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-49.5" />
+      <point x="3433.5" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.CustomerStorePanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-60.5" />
+      <point x="864.5" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.ManagerHomePanel" target="panels.HomePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="1965.5" y="1726.0" />
+      <point x="2249.0" y="1726.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="project.AdminAccount" target="project.Account" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="1488.0" y="456.0" />
+      <point x="1298.0" y="456.0" />
+      <point x="0.0" y="215.5" />
+    </edge>
+    <edge source="frames.ManagerAccountFrame" target="frames.AccountFrame" relationship="GENERALIZATION">
+      <point x="0.0" y="-49.5" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="panels.AdminCustomersPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="2111.0" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.AdminHomePanel" target="panels.HomePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="2520.0" y="1726.0" />
+      <point x="2249.0" y="1726.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.CustomerHomePanel" target="panels.HomePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.AdminManagersPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="1857.0" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.SettingsPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-93.5" />
+      <point x="4476.5" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="panels.SearchPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-49.5" />
+      <point x="3125.0" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="frames.AdminAccountFrame" target="frames.AccountFrame" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="1195.5" y="1750.0" />
+      <point x="914.0" y="1750.0" />
+      <point x="0.0" y="50.0" />
+    </edge>
+    <edge source="panels.AdminStoresPanel" target="panels.SidePanel" relationship="GENERALIZATION">
+      <point x="0.0" y="-38.5" />
+      <point x="3690.0" y="1280.0" />
+      <point x="2440.5" y="1280.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.15" showDependencies="false" x="3233.99872122762" y="1445.7608695652173" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

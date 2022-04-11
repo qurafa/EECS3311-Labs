@@ -1,21 +1,27 @@
 package project;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class Category {
         int categoryID;
         String desc;
-        List<Item> items;//items in this category
+        Set<Item> items;//items in this category
 
         //Category constructor
         public Category(){
-                items = new ArrayList<Item>();
+                items = new HashSet<Item>();
         }
 
         //adding an item to this category
-        private void addItem(Item item){
+        public void addItem(Item item){
                 items.add(item);
+        }
+
+        public void addItems(List<Item> items){
+                items.addAll(items);
         }
 
         //removing an item from this category
@@ -39,7 +45,7 @@ public class Category {
                 return this.desc;
         }
 
-        public List<Item> getItems(){
+        public Set<Item> getItems(){
                 return this.items;
         }
 }
